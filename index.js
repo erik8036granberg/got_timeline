@@ -9,31 +9,67 @@ function init() {
   console.log("init");
   document.querySelector("body").addEventListener("click", mouseClick);
   document.querySelector("#slider").addEventListener("input", timelineSlider);
+  loadJSON();
+}
+
+function loadJSON() {
+  fetch("datatest.json")
+    .then(res => res.json())
+    .then(jsondata => {
+      console.log(jsondata);
+      // jsondata.forEach(dataitem => {
+      //   console.log(dataitem);
+      // });
+    });
 }
 
 // - - - - - mouseclick event listers - - - - -
 
 function mouseClick(event) {
   click = event.target.dataset.click;
+  console.log("season clicked to expand");
   console.log(click);
-  if (click != undefined && click.startsWith("season")) {
-    event.preventDefault();
-    expandDiv(click);
+  if (click === "season_1") {
+    season1Expanded();
+    setExpanded(click);
+  }
+  if (click === "season_2") {
+    season2Expanded();
+    setExpanded(click);
+  }
+  if (click === "season_3") {
+    season3Expanded();
+    setExpanded(click);
+  }
+  if (click === "season_4") {
+    season4Expanded();
+    setExpanded(click);
+  }
+  if (click === "season_5") {
+    season5Expanded();
+    setExpanded(click);
+  }
+  if (click === "season_6") {
+    season6Expanded();
+    setExpanded(click);
+  }
+  if (click === "season_7") {
+    season7Expanded();
+    setExpanded(click);
   }
 }
 
 // - - - - - expand clicked div & close others - - - - -
 
-function expandDiv(click) {
-  console.log("expandDiv");
+function setExpanded(click) {
+  console.log("setExpanded");
 
+  // expand clicked
   document.querySelector("#" + click).classList.add("zoomview");
   document.querySelector("#" + click).classList.remove("compressed");
 
-  // expand clicked
-  const closeDivs = document.querySelectorAll("div:not(#" + click + ").season");
-
   // close others but clicked
+  const closeDivs = document.querySelectorAll("div:not(#" + click + ").season");
   closeDivs.forEach.call(closeDivs, function(el) {
     el.classList.remove("zoomview");
     el.classList.remove("overview");
@@ -59,6 +95,36 @@ function expandDiv(click) {
   }, 200);
 }
 
+// - - - - - expanded seasons - - - - -
+
+function season1Expanded() {
+  console.log("season1Expanded");
+}
+
+function season2Expanded() {
+  console.log("season2Expanded");
+}
+
+function season3Expanded() {
+  console.log("season3Expanded");
+}
+
+function season4Expanded() {
+  console.log("season4Expanded");
+}
+
+function season5Expanded() {
+  console.log("season5Expanded");
+}
+
+function season6Expanded() {
+  console.log("season6Expanded");
+}
+
+function season7Expanded() {
+  console.log("season7Expanded");
+}
+
 //  - - - - - - - - - slider test - - - - - - - - -
 
 function timelineSlider() {
@@ -72,3 +138,12 @@ function timelineSlider() {
   }
   document.querySelector("#deathcounter").textContent = seasonCount;
 }
+
+// function mouseClick(event) {
+//   click = event.target.dataset.click;
+//   console.log(click);
+//   if (click != undefined && click.startsWith("season")) {
+//     event.preventDefault();
+//     expandDiv(click);
+//   }
+// }

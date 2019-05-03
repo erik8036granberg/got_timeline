@@ -1,0 +1,44 @@
+{
+  "deaths": [
+    {
+      "episode": 1,
+      "dead": 4
+    },
+    {
+      "episode": 2,
+      "dead": 3
+    },
+    {
+      "episode": 3,
+      "dead": 0
+    },
+    {
+      "episode": 4,
+      "dead": 1
+    },
+    {
+      "episode": 5,
+      "dead": 5
+    },
+    {
+      "episode": 6,
+      "dead": 4
+    },
+    {
+      "episode": 7,
+      "dead": 2
+    },
+    {
+      "episode": 8,
+      "dead": 6
+    },
+    {
+      "episode": 9,
+      "dead": 2
+    },
+    {
+      "episode": 10,
+      "dead": 2
+    }
+  ]
+}
