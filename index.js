@@ -2,6 +2,7 @@
 
 let click;
 let activezoom;
+let data;
 
 window.addEventListener("DOMContentLoaded", init);
 
@@ -16,10 +17,8 @@ function loadJSON() {
   fetch("datatest.json")
     .then(res => res.json())
     .then(jsondata => {
-      console.log(jsondata);
-      // jsondata.forEach(dataitem => {
-      //   console.log(dataitem);
-      // });
+      data = jsondata;
+      console.log(data);
     });
 }
 
@@ -27,8 +26,7 @@ function loadJSON() {
 
 function mouseClick(event) {
   click = event.target.dataset.click;
-  console.log("season clicked to expand");
-  console.log(click);
+  console.log("mouseClick");
   if (click === "season_1") {
     season1Expanded();
     setExpanded(click);
@@ -128,15 +126,21 @@ function season7Expanded() {
 //  - - - - - - - - - slider test - - - - - - - - -
 
 function timelineSlider() {
-  console.log(this.value);
-
   let seasonCount = parseInt(this.value);
-  let deathCount = "";
+
+  // get number of dead from json
+  let dead;
+  let deathCount = 0;
+  let step;
+  for (step = 0; step < seasonCount; step++) {
+    dead = data["deaths"][step]["dead"];
+    deathCount = deathCount + dead;
+  }
 
   if (seasonCount > 67) {
     seasonCount = 67;
   }
-  document.querySelector("#deathcounter").textContent = seasonCount;
+  document.querySelector("#deathcounter").textContent = deathCount;
 }
 
 // function mouseClick(event) {
