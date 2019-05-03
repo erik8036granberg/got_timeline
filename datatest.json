@@ -1,44 +1,354 @@
 {
   "deaths": [
     {
+      "season": "#season_1",
       "episode": 1,
       "dead": 4
     },
     {
+      "season": "#season_1",
       "episode": 2,
       "dead": 3
     },
     {
+      "season": "#season_1",
       "episode": 3,
       "dead": 0
     },
     {
+      "season": "#season_1",
       "episode": 4,
       "dead": 1
     },
     {
+      "season": "#season_1",
       "episode": 5,
       "dead": 5
     },
     {
+      "season": "#season_1",
       "episode": 6,
       "dead": 4
     },
     {
+      "season": "#season_1",
       "episode": 7,
       "dead": 2
     },
     {
+      "season": "#season_1",
       "episode": 8,
       "dead": 6
     },
     {
+      "season": "#season_1",
       "episode": 9,
       "dead": 2
     },
     {
+      "season": "#season_1",
       "episode": 10,
       "dead": 2
+    },
+    {
+      "season": "#season_2",
+      "episode": 1,
+      "dead": 2
+    },
+    {
+      "season": "#season_2",
+      "episode": 2,
+      "dead": 1
+    },
+    {
+      "season": "#season_2",
+      "episode": 3,
+      "dead": 2
+    },
+    {
+      "season": "#season_2",
+      "episode": 4,
+      "dead": 3
+    },
+    {
+      "season": "#season_2",
+      "episode": 5,
+      "dead": 4
+    },
+    {
+      "season": "#season_2",
+      "episode": 6,
+      "dead": 5
+    },
+    {
+      "season": "#season_2",
+      "episode": 7,
+      "dead": 5
+    },
+    {
+      "season": "#season_2",
+      "episode": 8,
+      "dead": 3
+    },
+    {
+      "season": "#season_2",
+      "episode": 9,
+      "dead": 2
+    },
+    {
+      "season": "#season_2",
+      "episode": 10,
+      "dead": 6
+    },
+    {
+      "season": "#season_3",
+      "episode": 1,
+      "dead": 0
+    },
+    {
+      "season": "#season_3",
+      "episode": 2,
+      "dead": 1
+    },
+    {
+      "season": "#season_3",
+      "episode": 3,
+      "dead": 1
+    },
+    {
+      "season": "#season_3",
+      "episode": 4,
+      "dead": 4
+    },
+    {
+      "season": "#season_3",
+      "episode": 5,
+      "dead": 3
+    },
+    {
+      "season": "#season_3",
+      "episode": 6,
+      "dead": 1
+    },
+    {
+      "season": "#season_3",
+      "episode": 7,
+      "dead": 0
+    },
+    {
+      "season": "#season_3",
+      "episode": 8,
+      "dead": 3
+    },
+    {
+      "season": "#season_3",
+      "episode": 9,
+      "dead": 6
+    },
+    {
+      "season": "#season_3",
+      "episode": 10,
+      "dead": 1
+    },
+    {
+      "season": "#season_4",
+      "episode": 1,
+      "dead": 2
+    },
+    {
+      "season": "#season_4",
+      "episode": 2,
+      "dead": 3
+    },
+    {
+      "season": "#season_4",
+      "episode": 3,
+      "dead": 4
+    },
+    {
+      "season": "#season_4",
+      "episode": 4,
+      "dead": 1
+    },
+    {
+      "season": "#season_4",
+      "episode": 5,
+      "dead": 3
+    },
+    {
+      "season": "#season_4",
+      "episode": 6,
+      "dead": 0
+    },
+    {
+      "season": "#season_4",
+      "episode": 7,
+      "dead": 4
+    },
+    {
+      "season": "#season_4",
+      "episode": 8,
+      "dead": 4
+    },
+    {
+      "season": "#season_4",
+      "episode": 9,
+      "dead": 10
+    },
+    {
+      "season": "#season_4",
+      "episode": 10,
+      "dead": 4
+    },
+    {
+      "season": "#season_5",
+      "episode": 1,
+      "dead": 2
+    },
+    {
+      "season": "#season_5",
+      "episode": 2,
+      "dead": 2
+    },
+    {
+      "season": "#season_5",
+      "episode": 3,
+      "dead": 1
+    },
+    {
+      "season": "#season_5",
+      "episode": 4,
+      "dead": 3
+    },
+    {
+      "season": "#season_5",
+      "episode": 5,
+      "dead": 1
+    },
+    {
+      "season": "#season_5",
+      "episode": 6,
+      "dead": 1
+    },
+    {
+      "season": "#season_5",
+      "episode": 7,
+      "dead": 2
+    },
+    {
+      "season": "#season_5",
+      "episode": 8,
+      "dead": 4
+    },
+    {
+      "season": "#season_5",
+      "episode": 9,
+      "dead": 2
+    },
+    {
+      "season": "#season_5",
+      "episode": 10,
+      "dead": 6
+    },
+    {
+      "season": "#season_6",
+      "episode": 1,
+      "dead": 5
+    },
+    {
+      "season": "#season_6",
+      "episode": 2,
+      "dead": 5
+    },
+    {
+      "season": "#season_6",
+      "episode": 3,
+      "dead": 7
+    },
+    {
+      "season": "#season_6",
+      "episode": 4,
+      "dead": 4
+    },
+    {
+      "season": "#season_6",
+      "episode": 5,
+      "dead": 4
+    },
+    {
+      "season": "#season_6",
+      "episode": 6,
+      "dead": 1
+    },
+    {
+      "season": "#season_6",
+      "episode": 7,
+      "dead": 2
+    },
+    {
+      "season": "#season_6",
+      "episode": 8,
+      "dead": 11
+    },
+    {
+      "season": "#season_6",
+      "episode": 9,
+      "dead": 6
+    },
+    {
+      "season": "#season_6",
+      "episode": 10,
+      "dead": 11
+    },
+    {
+      "season": "#season_7",
+      "episode": 1,
+      "dead": 2
+    },
+    {
+      "season": "#season_7",
+      "episode": 2,
+      "dead": 2
+    },
+    {
+      "season": "#season_7",
+      "episode": 3,
+      "dead": 2
+    },
+    {
+      "season": "#season_7",
+      "episode": 4,
+      "dead": 1
+    },
+    {
+      "season": "#season_7",
+      "episode": 5,
+      "dead": 2
+    },
+    {
+      "season": "#season_7",
+      "episode": 6,
+      "dead": 4
+    },
+    {
+      "season": "#season_7",
+      "episode": 7,
+      "dead": 1
+    },
+    {
+      "season": "#season_7",
+      "episode": 8,
+      "dead": 0
+    },
+    {
+      "season": "#season_7",
+      "episode": 9,
+      "dead": 0
+    },
+    {
+      "season": "#season_7",
+      "episode": 10,
+      "dead": 0
     }
   ]
 }

@@ -126,28 +126,32 @@ function season7Expanded() {
 //  - - - - - - - - - slider test - - - - - - - - -
 
 function timelineSlider() {
-  let seasonCount = parseInt(this.value);
+  console.log("timelineSlider");
+  let episodeCount = parseInt(this.value);
 
   // get number of dead from json
   let dead;
-  let deathCount = 0;
+  let deathCount = 4;
   let step;
-  for (step = 0; step < seasonCount; step++) {
+  for (step = 0; step < episodeCount; step++) {
     dead = data["deaths"][step]["dead"];
     deathCount = deathCount + dead;
   }
 
-  if (seasonCount > 67) {
-    seasonCount = 67;
-  }
   document.querySelector("#deathcounter").textContent = deathCount;
+
+  let sliderSeason = data["deaths"][step]["season"];
+  let sliderEpisode = data["deaths"][step]["episode"];
+  console.log(step);
+  console.log(sliderSeason);
+  console.log(sliderEpisode);
+  setSliderColors(sliderSeason);
 }
 
-// function mouseClick(event) {
-//   click = event.target.dataset.click;
-//   console.log(click);
-//   if (click != undefined && click.startsWith("season")) {
-//     event.preventDefault();
-//     expandDiv(click);
-//   }
-// }
+function setSliderColors(sliderSeason) {
+  console.log("setSliderColors");
+  document.querySelector(sliderSeason).classList.add("setcolor");
+  setTimeout(function() {
+    document.querySelector(sliderSeason).classList.remove("setcolor");
+  }, 4000);
+}
