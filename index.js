@@ -1,8 +1,10 @@
 "use strict";
 
 let click;
-let activezoom;
+let enter;
+let exit;
 let data;
+let timelineHover = true;
 
 window.addEventListener("DOMContentLoaded", init);
 
@@ -10,6 +12,12 @@ function init() {
   console.log("init");
   document.querySelector("body").addEventListener("click", mouseClick);
   document.querySelector("#slider").addEventListener("input", timelineSlider);
+
+  const seasonIn = document.querySelectorAll(".season");
+  seasonIn.forEach(item => {
+    item.addEventListener("mouseenter", mouseEnter);
+    item.addEventListener("mouseleave", mouseExit);
+  });
   loadJSON();
 }
 
@@ -22,10 +30,22 @@ function loadJSON() {
     });
 }
 
-// - - - - - mouseclick event listers - - - - -
+function mouseEnter(event) {
+  console.log("mouseEnter");
+  enter = event.target.dataset.mouseevent;
+  document.querySelector("#" + enter).classList.add("hovercolor");
+}
+
+function mouseExit(event) {
+  console.log("mouseExit");
+  exit = event.target.dataset.mouseevent;
+  document.querySelector("#" + exit).classList.remove("hovercolor");
+}
+
+// - - - - - mouseclick seasons event listers - - - - -
 
 function mouseClick(event) {
-  click = event.target.dataset.click;
+  click = event.target.dataset.mouseevent;
   console.log("mouseClick");
   if (click === "season_1") {
     season1Expanded();
@@ -57,36 +77,33 @@ function mouseClick(event) {
   }
 }
 
-// - - - - - expand clicked div & close others - - - - -
-
 function setExpanded(click) {
   console.log("setExpanded");
-
   // expand clicked
   document.querySelector("#" + click).classList.add("zoomview");
   document.querySelector("#" + click).classList.remove("compressed");
+  closeOthers(click);
+  setSeasonName(click);
+}
 
-  // close others but clicked
+function closeOthers(click) {
+  // close all others but the clicked one
   const closeDivs = document.querySelectorAll("div:not(#" + click + ").season");
-  closeDivs.forEach.call(closeDivs, function(el) {
+  closeDivs.forEach(el => {
     el.classList.remove("zoomview");
     el.classList.remove("overview");
     el.classList.add("compressed");
   });
+}
 
-  // set color to zoomed-mode
-  const setColor = document.querySelectorAll(".season");
-  setColor.forEach.call(setColor, function(el) {
-    el.classList.add("setcolor");
-  });
-
-  // crop to season number for compressed panes
+function setSeasonName() {
+  // change full name to number for compressed seasons
   const setSeasonNr = document.querySelectorAll(".compressed .season_nr");
-  setSeasonNr.forEach.call(setSeasonNr, function(el) {
+  setSeasonNr.forEach(el => {
     el.textContent = el.textContent.slice(-1);
   });
 
-  // set season to full text for expanded
+  // set season to full text for expanded season
   setTimeout(function() {
     document.querySelector("#" + click + " .season_nr").textContent =
       "Season " + click.slice(-1);
@@ -123,7 +140,7 @@ function season7Expanded() {
   console.log("season7Expanded");
 }
 
-//  - - - - - - - - - slider test - - - - - - - - -
+//  - - - - - - - - - slider overview state - - - - - - - - -
 
 function timelineSlider() {
   console.log("timelineSlider");
@@ -138,20 +155,18 @@ function timelineSlider() {
     deathCount = deathCount + dead;
   }
 
+  // set death counter i DOM
   document.querySelector("#deathcounter").textContent = deathCount;
 
   let sliderSeason = data["deaths"][step]["season"];
-  let sliderEpisode = data["deaths"][step]["episode"];
-  console.log(step);
-  console.log(sliderSeason);
-  console.log(sliderEpisode);
   setSliderColors(sliderSeason);
 }
 
 function setSliderColors(sliderSeason) {
   console.log("setSliderColors");
-  document.querySelector(sliderSeason).classList.add("setcolor");
+  // set death counter i DOM + color fadeout for seasons
+  document.querySelector(sliderSeason).classList.add("hovercolor");
   setTimeout(function() {
-    document.querySelector(sliderSeason).classList.remove("setcolor");
-  }, 4000);
+    document.querySelector(sliderSeason).classList.remove("hovercolor");
+  }, 3000);
 }

@@ -126,37 +126,44 @@ header img {
 }
 
 #season_1:hover,
-#season_1.setcolor {
+#season_1.zoomview,
+#season_1.hovercolor {
   background-color: var(--season-1);
 }
 
 #season_2:hover,
-#season_2.setcolor {
+#season_2.zoomview,
+#season_2.hovercolor {
   background-color: var(--season-2);
 }
 
 #season_3:hover,
-#season_3.setcolor {
+#season_3.zoomview,
+#season_3.hovercolor {
   background-color: var(--season-3);
 }
 
 #season_4:hover,
-#season_4.setcolor {
+#season_4.zoomview,
+#season_4.hovercolor {
   background-color: var(--season-4);
 }
 
 #season_5:hover,
-#season_5.setcolor {
+#season_5.zoomview,
+#season_5.hovercolor {
   background-color: var(--season-5);
 }
 
 #season_6:hover,
-#season_6.setcolor {
+#season_6.zoomview,
+#season_6.hovercolor {
   background-color: var(--season-6);
 }
 
 #season_7:hover,
-#season_7.setcolor {
+#season_7.zoomview,
+#season_7.hovercolor {
   background-color: var(--season-7);
 }
 
@@ -208,10 +215,12 @@ header img {
   position: absolute;
   bottom: 35vh;
   z-index: 100;
+  pointer-events: none;
 }
 
 #timeline #slider {
   width: 100%;
+  pointer-events: none;
 }
 
 #timeline input[type="range"] {
@@ -229,7 +238,7 @@ header img {
 
 #timeline input[type="range"]:focus {
   outline: none;
-  /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+  /* watch out for accecebility */
 }
 
 #timeline input[type="range"]::-ms-track {
@@ -249,6 +258,7 @@ header img {
   width: 100%;
   background: #fff;
   border-radius: 1px;
+  pointer-events: none;
 }
 
 #timeline input[type="range"]::-webkit-slider-thumb {
@@ -257,6 +267,7 @@ header img {
   width: 14px !important;
   height: 26px !important;
   cursor: pointer;
+  pointer-events: auto;
 }
 
 #timeline input[type="range"]::-moz-range-thumb {
@@ -265,6 +276,7 @@ header img {
   width: 14px !important;
   height: 26px !important;
   cursor: pointer;
+  pointer-events: auto;
 }
 
 #timeline input[type="range"]::-ms-thumb {
@@ -273,6 +285,7 @@ header img {
   width: 14px !important;
   height: 26px !important;
   cursor: pointer;
+  pointer-events: auto;
 }
 
 #deathcounter {
