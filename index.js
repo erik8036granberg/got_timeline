@@ -27,59 +27,105 @@ function loadJSON() {
     .then(jsondata => {
       data = jsondata;
       console.log(data);
-      loadSVG();
+      loadSVGtemplate();
     });
 }
 
-function loadSVG() {
+function loadSVGtemplate() {
   fetch("img/template.svg")
     .then(response => response.text())
     .then(svgdata => {
-      console.log("svg er loaded");
+      console.log("loadSVGtemplate");
       document.querySelector("#temp").insertAdjacentHTML("afterbegin", svgdata);
+      getFeatured();
     });
-
-  // setTimeout(function() {
-  //   cloneTemplate();
-  // }, 1000);
 }
 
-function cloneTemplate() {
-  console.log("cloneTemplate");
-  const template = document.querySelector("#template");
+function getFeatured() {
+  console.log("getFeatured");
+  const featuredDeaths = data["featured"];
+  console.log(featuredDeaths);
+  featuredDeaths.forEach(cloneFeatured);
+}
+
+function cloneFeatured(featuredDeaths) {
+  console.log("cloneFeatured");
+  const name = featuredDeaths.name;
+  const symbol = featuredDeaths.symbol;
+  const image = featuredDeaths.image;
+  const position = featuredDeaths.position;
+  const season = featuredDeaths.season;
+  const episode = featuredDeaths.episode;
+  const time = featuredDeaths.time;
+  const length = featuredDeaths.length;
 
   // make a clone
+  const template = document.querySelector("#template");
   const clone = template.cloneNode(true);
 
-  // modify id
-  clone.id = "new_id";
-
-  // modify title
-  clone.querySelector("title").textContent = "New_title";
+  // modify id & title
+  clone.id = name
+    .split(" ")
+    .join("_")
+    .toLowerCase();
+  clone.querySelector("title").textContent = name;
 
   // modify symbol
   clone
     .querySelector(".featured_symbol image")
-    .setAttribute("xlink:href", "img/symbol_template.svg");
+    .setAttribute("xlink:href", `img/${symbol}`);
 
   // modify image
   clone
     .querySelector(".featured_image image")
-    .setAttribute("xlink:href", "img/img_template.jpg");
+    .setAttribute("xlink:href", `img/${image}`);
 
   // modify y position
-  // clone.querySelector("line").setAttribute("y1", "265");
-  // clone.querySelector(".featured_image").style.transform =
-  //   "translateY(150px)";
-  // clone.querySelector(".featured_symbol").style.transform =
-  //   "translateY(150px)";
-  // clone.querySelector(".featured circle").style.transform =
-  //   "translateY(150px)";
+  let pos_line;
+  let pos_img;
+  console.log(position);
 
-  // append it destination
-  document.querySelector("#canvas").appendChild(clone);
+  if (position == 1) {
+    pos_line = 65;
+    pos_img = -50;
+    console.log("1 set");
+  }
+  if (position == 2) {
+    pos_line = 115;
+    pos_img = 0;
+    console.log("2 set");
+  }
+  if (position == 3) {
+    pos_line = 165;
+    pos_img = 50;
+    console.log("2 set");
+  }
+  if (position == 4) {
+    pos_line = 215;
+    pos_img = 100;
+    console.log("4 set");
+  }
+  if (position == 5) {
+    pos_line = 265;
+    pos_img = 150;
+    console.log("5 set");
+  }
 
-  symbolStart();
+  clone.querySelector("line").setAttribute("y1", `${pos_line}`);
+  clone.querySelector(
+    ".featured_image"
+  ).style.transform = `translateY(${pos_img}px)`;
+  clone.querySelector(
+    ".featured_symbol"
+  ).style.transform = `translateY(${pos_img}px)`;
+  clone.querySelector(
+    ".featured circle"
+  ).style.transform = `translateY(${pos_img}px)`;
+
+  // append it destination season div
+  document.querySelector(`${season}`).appendChild(clone);
+
+  // symbolStart();
 }
 
 function mouseEnter(event) {
