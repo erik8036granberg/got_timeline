@@ -1,0 +1,17 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <title>stark</title>
+  <g>
+    <circle id="circle_path" class="cls-1" cx="149.5" cy="150.43" r="145.57"/>
+    <g>
+      <path d="M74.56,238.43,198,115s40-40,33.64-46.33-46.33,33.64-46.33,33.64L61.87,225.74Z"/>
+      <rect x="96.05" y="163.43" width="11.74" height="65.02" transform="translate(-108.7 129.46) rotate(-45)"/>
+    </g>
+  </g>
+</svg>

@@ -1,4 +1,24 @@
 {
+  "featured": [
+    {
+      "name": "Viserys Targaryen",
+      "season": "#season_1",
+      "episode": 6,
+      "time": 51,
+      "symbol": "symbol_targaryen.svg",
+      "image": "img_targaryen.jpg",
+      "position": "4"
+    },
+    {
+      "name": "Eddard Stark",
+      "season": "#season_1",
+      "episode": 9,
+      "time": 55,
+      "symbol": "symbol_stark.svg",
+      "image": "img_stark.jpg",
+      "position": "1"
+    }
+  ],
   "deaths": [
     {
       "season": "#season_1",

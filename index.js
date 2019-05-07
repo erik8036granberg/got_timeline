@@ -27,7 +27,59 @@ function loadJSON() {
     .then(jsondata => {
       data = jsondata;
       console.log(data);
+      loadSVG();
     });
+}
+
+function loadSVG() {
+  fetch("img/template.svg")
+    .then(response => response.text())
+    .then(svgdata => {
+      console.log("svg er loaded");
+      document.querySelector("#temp").insertAdjacentHTML("afterbegin", svgdata);
+    });
+
+  // setTimeout(function() {
+  //   cloneTemplate();
+  // }, 1000);
+}
+
+function cloneTemplate() {
+  console.log("cloneTemplate");
+  const template = document.querySelector("#template");
+
+  // make a clone
+  const clone = template.cloneNode(true);
+
+  // modify id
+  clone.id = "new_id";
+
+  // modify title
+  clone.querySelector("title").textContent = "New_title";
+
+  // modify symbol
+  clone
+    .querySelector(".featured_symbol image")
+    .setAttribute("xlink:href", "img/symbol_template.svg");
+
+  // modify image
+  clone
+    .querySelector(".featured_image image")
+    .setAttribute("xlink:href", "img/img_template.jpg");
+
+  // modify y position
+  // clone.querySelector("line").setAttribute("y1", "265");
+  // clone.querySelector(".featured_image").style.transform =
+  //   "translateY(150px)";
+  // clone.querySelector(".featured_symbol").style.transform =
+  //   "translateY(150px)";
+  // clone.querySelector(".featured circle").style.transform =
+  //   "translateY(150px)";
+
+  // append it destination
+  document.querySelector("#canvas").appendChild(clone);
+
+  symbolStart();
 }
 
 function mouseEnter(event) {
