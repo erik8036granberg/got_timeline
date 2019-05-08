@@ -19,6 +19,16 @@
       "symbol": "symbol_stark.svg",
       "image": "img_stark.jpg",
       "position": "1"
+    },
+    {
+      "name": "Renly Baratheon",
+      "season": "#season_2",
+      "episode": 5,
+      "length": 55,
+      "time": 4,
+      "symbol": "symbol_r_baratheon.svg",
+      "image": "img_r_baratheon.jpg",
+      "position": "5"
     }
   ],
   "deaths": [

@@ -173,6 +173,7 @@ function mouseEnter(event) {
 
 function mouseExit(event) {
   exit = event.target.dataset.mouseevent;
+  removeExpandedImages(exit);
   stopBack(exit);
 }
 
@@ -181,8 +182,8 @@ function mouseExit(event) {
 function imageClicked(fixedname, season) {
   console.log("imageClicked");
   console.log(fixedname);
-  console.log(season);
   season = season.substring(1);
+  console.log(season);
   setExpanded(season);
 }
 
@@ -335,6 +336,7 @@ function setExpanded(click) {
   document.querySelector("#" + click).classList.remove("compressed");
   closeOthers(click);
   setSeasonName(click);
+  setExpandedImages(click);
 }
 
 function closeOthers(click) {
@@ -347,7 +349,7 @@ function closeOthers(click) {
   });
 }
 
-function setSeasonName() {
+function setSeasonName(click) {
   // change full name to number for compressed seasons
   const setSeasonNr = document.querySelectorAll(".compressed .season_nr");
   setSeasonNr.forEach(el => {
@@ -359,6 +361,22 @@ function setSeasonName() {
     document.querySelector("#" + click + " .season_nr").textContent =
       "Season " + click.slice(-1);
   }, 200);
+}
+
+function setExpandedImages(click) {
+  console.log("setExpandedImages");
+  const expandedImages = document.querySelectorAll("#" + click + " .featured");
+  expandedImages.forEach(el => {
+    el.classList.add("flipped_expanded");
+  });
+}
+
+function removeExpandedImages(click) {
+  console.log("removeExpandedImages");
+  const expandedImages = document.querySelectorAll("#" + click + " .featured");
+  expandedImages.forEach(el => {
+    el.classList.remove("flipped_expanded");
+  });
 }
 
 // - - - - - expanded seasons - - - - -
