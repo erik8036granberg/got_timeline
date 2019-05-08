@@ -27,15 +27,55 @@ function loadJSON() {
     .then(jsondata => {
       data = jsondata;
       console.log(data);
-      loadSVGtemplate();
+      loadSVGtemplate1();
     });
 }
 
-function loadSVGtemplate() {
-  fetch("img/template.svg")
+function loadSVGtemplate1() {
+  fetch("img/template_1.svg")
     .then(response => response.text())
     .then(svgdata => {
-      console.log("loadSVGtemplate");
+      console.log("loadSVGtemplate_1");
+      document.querySelector("#temp").insertAdjacentHTML("afterbegin", svgdata);
+      loadSVGtemplate2();
+    });
+}
+
+function loadSVGtemplate2() {
+  fetch("img/template_2.svg")
+    .then(response => response.text())
+    .then(svgdata => {
+      console.log("loadSVGtemplate_2");
+      document.querySelector("#temp").insertAdjacentHTML("afterbegin", svgdata);
+      loadSVGtemplate3();
+    });
+}
+
+function loadSVGtemplate3() {
+  fetch("img/template_3.svg")
+    .then(response => response.text())
+    .then(svgdata => {
+      console.log("loadSVGtemplate_3");
+      document.querySelector("#temp").insertAdjacentHTML("afterbegin", svgdata);
+      loadSVGtemplate4();
+    });
+}
+
+function loadSVGtemplate4() {
+  fetch("img/template_4.svg")
+    .then(response => response.text())
+    .then(svgdata => {
+      console.log("loadSVGtemplate_4");
+      document.querySelector("#temp").insertAdjacentHTML("afterbegin", svgdata);
+      loadSVGtemplate5();
+    });
+}
+
+function loadSVGtemplate5() {
+  fetch("img/template_5.svg")
+    .then(response => response.text())
+    .then(svgdata => {
+      console.log("loadSVGtemplate_5");
       document.querySelector("#temp").insertAdjacentHTML("afterbegin", svgdata);
       getFeatured();
     });
@@ -60,7 +100,7 @@ function cloneFeatured(featuredDeaths) {
   const length = featuredDeaths.length;
 
   // make a clone
-  const template = document.querySelector("#template");
+  const template = document.querySelector(`#template_${position}`);
   const clone = template.cloneNode(true);
 
   // set id & title
@@ -79,49 +119,6 @@ function cloneFeatured(featuredDeaths) {
   clone
     .querySelector(".featured_image image")
     .setAttribute("xlink:href", `img/${image}`);
-
-  // set y-height based of 1-5 presets in json
-  let line_pos;
-  let img_pos;
-  console.log(position);
-
-  if (position == 1) {
-    line_pos = 65;
-    img_pos = -50;
-    console.log("1 set");
-  }
-  if (position == 2) {
-    line_pos = 115;
-    img_pos = 0;
-    console.log("2 set");
-  }
-  if (position == 3) {
-    line_pos = 165;
-    img_pos = 50;
-    console.log("2 set");
-  }
-  if (position == 4) {
-    line_pos = 215;
-    img_pos = 100;
-    console.log("4 set");
-  }
-  if (position == 5) {
-    line_pos = 265;
-    img_pos = 150;
-    console.log("5 set");
-  }
-
-  // set y-position i svg
-  clone.querySelector("line").setAttribute("y1", `${line_pos}`);
-  clone.querySelector(
-    ".featured_image"
-  ).style.transform = `translateY(${img_pos}px)`;
-  clone.querySelector(
-    ".featured_symbol"
-  ).style.transform = `translateY(${img_pos}px)`;
-  clone.querySelector(
-    ".featured circle"
-  ).style.transform = `translateY(${img_pos}px)`;
 
   // calculate timeline position i season
   const timeline_pos = episode * 10 - 1 + (time * 10) / length;

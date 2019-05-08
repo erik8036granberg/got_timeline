@@ -1,28 +1,8 @@
 <svg id="template_2" class="featured_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="30 0 140 400">
   <defs>
     <style>
-      .cls-1, .cls-3, .cls-5 {
-        fill: none;
-      }
-
-      .cls-2 {
-        fill: #fff;
-      }
-
-      .cls-3, .cls-5 {
-        stroke: #fff;
-        stroke-miterlimit: 10;
-      }
-
-      .cls-3 {
-        stroke-width: 2px;
-      }
-
-      .cls-4 {
-        clip-path: url(#clip-path);
-      }
     </style>
-    <clipPath id="clip-path" transform="translate(-0.1)">
+    <clipPath id="clip-path-2">
       <circle class="cls-1" cx="100.1" cy="115" r="29"/>
     </clipPath>
   </defs>
@@ -30,10 +10,10 @@
   <rect class="cls-2 featured_stop" x="93.5" y="387" width="13" height="13"/>
   <line class="cls-3 featured_line" x1="100" y1="115" x2="100" y2="393"/>
   <g class="featured">
-  <g class="cls-4 featured_image">
+  <g class="clippath-2 featured_image">
     <image width="300" height="300" transform="translate(68 83) scale(0.21)" xlink:href="img/img_template.jpg"/>
   </g>
-  <g class="cls-4 featured_symbol">
+  <g class="clippath-2 featured_symbol">
     <image width="300" height="300" transform="translate(68 83) scale(0.21)" xlink:href="img/symbol_template.svg"/>
   </g>
   <circle class="cls-5" cx="100" cy="115" r="29"/>

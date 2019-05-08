@@ -234,9 +234,51 @@ header img {
 
 #seasons .featured_svg .featured {
   pointer-events: all;
-  transform-box: fill-box;
-  transform-origin: center;
 }
+
+/* - - - - - - - svg styles - - - - - - -  */
+
+.cls-1,
+.cls-3,
+.cls-5 {
+  fill: none;
+}
+
+.cls-2 {
+  fill: #fff;
+}
+
+.cls-3,
+.cls-5 {
+  stroke: #fff;
+  stroke-miterlimit: 10;
+}
+
+.cls-3 {
+  stroke-width: 2px;
+}
+
+.clippath-1 {
+  clip-path: url(#clip-path-1);
+}
+
+.clippath-2 {
+  clip-path: url(#clip-path-2);
+}
+
+.clippath-3 {
+  clip-path: url(#clip-path-3);
+}
+
+.clippath-4 {
+  clip-path: url(#clip-path-4);
+}
+
+.clippath-5 {
+  clip-path: url(#clip-path-5);
+}
+
+/* - - - - - - - svg animations - - - - - - -  */
 
 .small {
   transform: scale(0);
