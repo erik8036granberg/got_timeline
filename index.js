@@ -63,64 +63,70 @@ function cloneFeatured(featuredDeaths) {
   const template = document.querySelector("#template");
   const clone = template.cloneNode(true);
 
-  // modify id & title
+  // set id & title
   clone.id = name
     .split(" ")
     .join("_")
     .toLowerCase();
   clone.querySelector("title").textContent = name;
 
-  // modify symbol
+  // set symbol path
   clone
     .querySelector(".featured_symbol image")
     .setAttribute("xlink:href", `img/${symbol}`);
 
-  // modify image
+  // set image path
   clone
     .querySelector(".featured_image image")
     .setAttribute("xlink:href", `img/${image}`);
 
-  // modify y position
-  let pos_line;
-  let pos_img;
+  // set y-height based of 1-5 presets in json
+  let line_pos;
+  let img_pos;
   console.log(position);
 
   if (position == 1) {
-    pos_line = 65;
-    pos_img = -50;
+    line_pos = 65;
+    img_pos = -50;
     console.log("1 set");
   }
   if (position == 2) {
-    pos_line = 115;
-    pos_img = 0;
+    line_pos = 115;
+    img_pos = 0;
     console.log("2 set");
   }
   if (position == 3) {
-    pos_line = 165;
-    pos_img = 50;
+    line_pos = 165;
+    img_pos = 50;
     console.log("2 set");
   }
   if (position == 4) {
-    pos_line = 215;
-    pos_img = 100;
+    line_pos = 215;
+    img_pos = 100;
     console.log("4 set");
   }
   if (position == 5) {
-    pos_line = 265;
-    pos_img = 150;
+    line_pos = 265;
+    img_pos = 150;
     console.log("5 set");
   }
 
-  clone.querySelector("line").setAttribute("y1", `${pos_line}`);
+  // set y-position i svg
+  clone.querySelector("line").setAttribute("y1", `${line_pos}`);
   clone.querySelector(
     ".featured_image"
-  ).style.transform = `translateY(${pos_img}px)`;
+  ).style.transform = `translateY(${img_pos}px)`;
   clone.querySelector(
     ".featured_symbol"
-  ).style.transform = `translateY(${pos_img}px)`;
+  ).style.transform = `translateY(${img_pos}px)`;
   clone.querySelector(
     ".featured circle"
-  ).style.transform = `translateY(${pos_img}px)`;
+  ).style.transform = `translateY(${img_pos}px)`;
+
+  // calculate timeline position i season
+  const timeline_pos = episode * 10 - 1 + (time * 10) / length;
+  console.log(timeline_pos + "%");
+  clone.style.left = `calc(${timeline_pos}% - 75px)`;
 
   // append it destination season div
   document.querySelector(`${season}`).appendChild(clone);

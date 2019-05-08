@@ -216,10 +216,25 @@ header img {
   background-color: var(--season-7-hover);
 }
 
+#seasons .featured_svg {
+  position: absolute;
+  bottom: 0;
+  width: 130px;
+  height: auto;
+  bottom: 38vh;
+  left: -65px;
+  z-index: 100;
+  pointer-events: none;
+}
+
+#seasons .featured_svg .featured {
+  pointer-events: all;
+}
+
 #timeline {
   width: 100%;
   position: absolute;
-  bottom: 35vh;
+  bottom: 30vh;
   z-index: 100;
   pointer-events: none;
 }
