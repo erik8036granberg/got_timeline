@@ -141,6 +141,9 @@ function symbolStart() {
   const allStart = document.querySelectorAll(".featured");
   allStart.forEach(el => {
     el.classList.add("appear");
+    setTimeout(function() {
+      el.classList.remove("appear");
+    }, 1000);
   });
   const hideLines = document.querySelectorAll(".featured_line");
   hideLines.forEach(el => {
@@ -168,7 +171,7 @@ function mouseExit(event) {
   exit = event.target.dataset.mouseevent;
   if (exit != undefined && exit.startsWith("season")) {
     document.querySelector("#" + exit).classList.remove("hovercolor");
-    flipBack(exit);
+    stopBack(exit);
   }
 }
 
@@ -200,7 +203,8 @@ function drawLine(enter) {
   );
   drawTheLine.forEach(el => {
     el.classList.remove("hidden");
-    el.classList.add("line");
+    el.classList.remove("lineback");
+    el.classList.add("drawline");
   });
   setTimeout(function() {
     scaleStop(enter);
@@ -211,7 +215,62 @@ function scaleStop(enter) {
   console.log("scaleStop");
   const scaleDot = document.querySelectorAll("#" + enter + " .featured_stop");
   scaleDot.forEach(el => {
-    el.classList.remove("small");
+    el.classList.add("scalein");
+  });
+}
+
+// - - - - - - - flip back animation - - - - - - -
+
+function stopBack(exit) {
+  console.log("stopBack");
+  const scaleDot = document.querySelectorAll("#" + exit + " .featured_stop");
+  scaleDot.forEach(el => {
+    el.classList.remove("scalein");
+    el.classList.add("scaleout");
+    setTimeout(function() {
+      el.classList.remove("scaleout");
+    }, 200);
+  });
+  const stopEvent = document.querySelectorAll("#" + enter + " .featured_stop");
+  stopEvent.forEach(el => {
+    el.addEventListener("animationend", removeLine(exit));
+  });
+}
+
+function removeLine(exit) {
+  console.log("removeLine");
+  const removeTheLine = document.querySelectorAll(
+    "#" + exit + " .featured_line"
+  );
+  removeTheLine.forEach(el => {
+    el.classList.remove("drawline");
+    el.classList.add("lineback");
+  });
+  setTimeout(function() {
+    flipBack(exit);
+  }, 300);
+}
+
+function flipBack(exit) {
+  console.log("flipBack");
+
+  const flipElementsBack = document.querySelectorAll("#" + exit + " .featured");
+  flipElementsBack.forEach(el => {
+    el.classList.remove("flip");
+    el.classList.add("flipback");
+    setTimeout(function() {
+      el.classList.remove("flipback");
+    }, 200);
+  });
+  const showSymbol = document.querySelectorAll(
+    "#" + exit + " .featured_symbol"
+  );
+  showSymbol.forEach(el => {
+    el.classList.remove("hide_symbol");
+    el.classList.add("show_symbol");
+    setTimeout(function() {
+      el.classList.remove("show_symbol");
+    }, 200);
   });
 }
 

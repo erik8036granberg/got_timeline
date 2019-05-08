@@ -227,8 +227,15 @@ header img {
   pointer-events: none;
 }
 
+#seasons .compressed .featured_svg {
+  opacity: 0;
+  transition: 1s;
+}
+
 #seasons .featured_svg .featured {
   pointer-events: all;
+  transform-box: fill-box;
+  transform-origin: center;
 }
 
 .small {
@@ -240,42 +247,56 @@ header img {
 }
 
 .appear {
-  animation: appear 0.5s linear forwards;
+  animation: appear_frames 0.5s ease-in forwards;
   transform-box: fill-box;
   transform-origin: center;
 }
 
-@keyframes appear {
+@keyframes appear_frames {
   0% {
     transform: scale(0);
   }
   100% {
-    transform: scale(0.8);
+    transform: scale(1);
   }
 }
 
 .flip {
-  animation: flip 0.3s linear forwards;
+  animation: flip_frames 0.3s ease-in forwards;
   transform-box: fill-box;
   transform-origin: center;
 }
 
-@keyframes flip {
+@keyframes flip_frames {
   0% {
     transform: perspective(0) rotateY(0deg) rotateX(0deg) scale(0.8);
   }
   100% {
     transform: perspective(0) rotateY(-180.1deg) rotateX(0deg) scale(1.6);
-    /* transform: perspective(0) rotateY(-180.1deg) rotateX(0deg) scale(2.2); */
+  }
+}
+
+.flipback {
+  animation: flipback_frames 0.3s ease-in forwards;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes flipback_frames {
+  0% {
+    transform: perspective(0) rotateY(-180.1deg) rotateX(0deg) scale(1.6);
+  }
+  100% {
+    transform: perspective(0) rotateY(0deg) rotateX(0deg) scale(0.8);
   }
 }
 
 .hide_symbol {
-  animation: hide 0.3s linear forwards;
+  animation: hide_symbol_frames 0.3s ease-in forwards;
   transform-origin: center;
 }
 
-@keyframes hide {
+@keyframes hide_symbol_frames {
   0% {
     visibility: visible;
   }
@@ -289,13 +310,32 @@ header img {
   }
 }
 
-.line {
-  animation: stretch 0.5s linear forwards;
+.show_symbol {
+  animation: show_symbol_frames 0.3s ease-in forwards;
+  transform-origin: center;
+}
+
+@keyframes show_symbol_frames {
+  0% {
+    visibility: hidden;
+  }
+
+  50% {
+    visibility: hidden;
+  }
+
+  100% {
+    visibility: visible;
+  }
+}
+
+.drawline {
+  animation: drawline_frames 0.5s ease-in forwards;
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
 }
 
-@keyframes stretch {
+@keyframes drawline_frames {
   0% {
     stroke-dashoffset: 1000;
   }
@@ -304,19 +344,48 @@ header img {
   }
 }
 
-.stop {
-  animation: stop 0.1s linear forwards;
-  transform-box: fill-box;
-  transform-origin: center;
-  animation-delay: 3.75s;
+.lineback {
+  animation: lineback_frames 0.5s ease-in forwards;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
 }
 
-@keyframes stop {
+@keyframes lineback_frames {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 1000;
+  }
+}
+
+.scalein {
+  animation: scalein_frames 0.2s ease-in forwards;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes scalein_frames {
   0% {
     transform: scale(0);
   }
   100% {
     transform: scale(1);
+  }
+}
+
+.scaleout {
+  animation: scaleout_frames 0.2s ease-in backwards;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes scaleout_frames {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
   }
 }
 
