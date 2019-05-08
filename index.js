@@ -313,6 +313,7 @@ function setExpanded(click) {
   console.log("setExpanded");
   // expand clicked
   document.querySelector("#" + click).classList.add("zoomview");
+  document.querySelector("#" + click).classList.remove("overview");
   document.querySelector("#" + click).classList.remove("compressed");
   closeOthers(click);
   setSeasonName(click);
