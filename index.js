@@ -90,6 +90,7 @@ function getFeatured() {
 
 function cloneFeatured(featuredDeaths) {
   console.log("cloneFeatured");
+  let fixedname;
   const name = featuredDeaths.name;
   const symbol = featuredDeaths.symbol;
   const image = featuredDeaths.image;
@@ -104,10 +105,13 @@ function cloneFeatured(featuredDeaths) {
   const clone = template.cloneNode(true);
 
   // set id & title
-  clone.id = name
+  fixedname = name
     .split(" ")
     .join("_")
     .toLowerCase();
+
+  clone.id = fixedname;
+
   clone.querySelector("title").textContent = name;
 
   // set symbol path
@@ -125,10 +129,19 @@ function cloneFeatured(featuredDeaths) {
   console.log(timeline_pos + "%");
   clone.style.left = `calc(${timeline_pos}% - 75px)`;
 
+  // add eventlistners
+  clone.addEventListener("click", () => {
+    imageClicked(fixedname);
+  });
+
   // append it destination season div
   document.querySelector(`${season}`).appendChild(clone);
 
   symbolStart();
+}
+
+function imageClicked(name) {
+  console.log("imageClicked");
 }
 
 // - - - - - - - startanimation of symbols - - - - - - -
@@ -155,21 +168,14 @@ function symbolStart() {
 // - - - - - mouseover event listners - - - - -
 
 function mouseEnter(event) {
-  console.log("mouseEnter");
+  console.log(event);
   enter = event.target.dataset.mouseevent;
-  if (enter != undefined && enter.startsWith("season")) {
-    document.querySelector("#" + enter).classList.add("hovercolor");
-    flip(enter);
-  }
+  flip(enter);
 }
 
 function mouseExit(event) {
-  console.log("mouseExit");
   exit = event.target.dataset.mouseevent;
-  if (exit != undefined && exit.startsWith("season")) {
-    document.querySelector("#" + exit).classList.remove("hovercolor");
-    stopBack(exit);
-  }
+  stopBack(exit);
 }
 
 // - - - - - - - flip enter animation - - - - - - -
@@ -195,6 +201,13 @@ function flip(enter) {
 
 function drawLine(enter) {
   console.log("drawLine");
+  setTimeout(function() {
+    const setFlipped = document.querySelectorAll("#" + enter + " .featured");
+    setFlipped.forEach(el => {
+      el.classList.remove("flip");
+      el.classList.add("flipped");
+    });
+  }, 300);
   const drawTheLine = document.querySelectorAll(
     "#" + enter + " .featured_line"
   );
@@ -220,6 +233,7 @@ function scaleStop(enter) {
 
 function stopBack(exit) {
   console.log("stopBack");
+
   const scaleDot = document.querySelectorAll("#" + exit + " .featured_stop");
   scaleDot.forEach(el => {
     el.classList.remove("scalein");
@@ -250,10 +264,9 @@ function removeLine(exit) {
 
 function flipBack(exit) {
   console.log("flipBack");
-
   const flipElementsBack = document.querySelectorAll("#" + exit + " .featured");
   flipElementsBack.forEach(el => {
-    el.classList.remove("flip");
+    el.classList.remove("flipped");
     el.classList.add("flipback");
     setTimeout(function() {
       el.classList.remove("flipback");

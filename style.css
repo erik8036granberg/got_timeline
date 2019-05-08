@@ -280,6 +280,13 @@ header img {
 
 /* - - - - - - - svg animations - - - - - - -  */
 
+.imagehover {
+  transform: scale(1.5);
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: 0.5s;
+}
+
 .small {
   transform: scale(0);
 }
@@ -316,6 +323,17 @@ header img {
   100% {
     transform: perspective(0) rotateY(-180.1deg) rotateX(0deg) scale(1.6);
   }
+}
+
+.flipped {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: perspective(0) rotateY(-180.1deg) rotateX(0deg) scale(1.6);
+}
+
+.flipped:hover {
+  transform: perspective(0) rotateY(-180.1deg) rotateX(0deg) scale(2);
+  transition: 0.5s;
 }
 
 .flipback {
