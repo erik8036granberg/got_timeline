@@ -31,6 +31,8 @@ function loadJSON() {
     });
 }
 
+// - - - - - - - load svg templates .....TODO: DRY this - - - - - - -
+
 function loadSVGtemplate1() {
   fetch("img/template_1.svg")
     .then(response => response.text())
@@ -131,17 +133,13 @@ function cloneFeatured(featuredDeaths) {
 
   // add eventlistners
   clone.addEventListener("click", () => {
-    imageClicked(fixedname);
+    imageClicked(fixedname, season);
   });
 
   // append it destination season div
   document.querySelector(`${season}`).appendChild(clone);
 
   symbolStart();
-}
-
-function imageClicked(name) {
-  console.log("imageClicked");
 }
 
 // - - - - - - - startanimation of symbols - - - - - - -
@@ -176,6 +174,16 @@ function mouseEnter(event) {
 function mouseExit(event) {
   exit = event.target.dataset.mouseevent;
   stopBack(exit);
+}
+
+// - - - - - - - click on image - - - - - - -
+
+function imageClicked(fixedname, season) {
+  console.log("imageClicked");
+  console.log(fixedname);
+  console.log(season);
+  season = season.substring(1);
+  setExpanded(season);
 }
 
 // - - - - - - - flip enter animation - - - - - - -
