@@ -221,7 +221,7 @@ header img {
   bottom: 0;
   width: 130px;
   height: auto;
-  bottom: 38vh;
+  bottom: 34vh;
   left: -65px;
   z-index: 100;
   pointer-events: none;
@@ -229,6 +229,95 @@ header img {
 
 #seasons .featured_svg .featured {
   pointer-events: all;
+}
+
+.small {
+  transform: scale(0);
+}
+
+.hidden {
+  display: none;
+}
+
+.appear {
+  animation: appear 0.5s linear forwards;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes appear {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+.flip {
+  animation: flip 0.3s linear forwards;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes flip {
+  0% {
+    transform: perspective(0) rotateY(0deg) rotateX(0deg) scale(0.8);
+  }
+  100% {
+    transform: perspective(0) rotateY(-180.1deg) rotateX(0deg) scale(1.6);
+    /* transform: perspective(0) rotateY(-180.1deg) rotateX(0deg) scale(2.2); */
+  }
+}
+
+.hide_symbol {
+  animation: hide 0.3s linear forwards;
+  transform-origin: center;
+}
+
+@keyframes hide {
+  0% {
+    visibility: visible;
+  }
+
+  50% {
+    visibility: hidden;
+  }
+
+  100% {
+    visibility: hidden;
+  }
+}
+
+.line {
+  animation: stretch 0.5s linear forwards;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+
+@keyframes stretch {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.stop {
+  animation: stop 0.1s linear forwards;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation-delay: 3.75s;
+}
+
+@keyframes stop {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 #timeline {

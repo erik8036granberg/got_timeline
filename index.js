@@ -131,22 +131,91 @@ function cloneFeatured(featuredDeaths) {
   // append it destination season div
   document.querySelector(`${season}`).appendChild(clone);
 
-  // symbolStart();
+  symbolStart();
 }
+
+// - - - - - - - startanimation of symbols - - - - - - -
+
+function symbolStart() {
+  console.log("symbolStart");
+  const allStart = document.querySelectorAll(".featured");
+  allStart.forEach(el => {
+    el.classList.add("appear");
+  });
+  const hideLines = document.querySelectorAll(".featured_line");
+  hideLines.forEach(el => {
+    el.classList.add("hidden");
+  });
+  const scaleStopes = document.querySelectorAll(".featured_stop");
+  scaleStopes.forEach(el => {
+    el.classList.add("small");
+  });
+}
+
+// - - - - - mouseover event listners - - - - -
 
 function mouseEnter(event) {
   console.log("mouseEnter");
   enter = event.target.dataset.mouseevent;
-  document.querySelector("#" + enter).classList.add("hovercolor");
+  if (enter != undefined && enter.startsWith("season")) {
+    document.querySelector("#" + enter).classList.add("hovercolor");
+    flip(enter);
+  }
 }
 
 function mouseExit(event) {
   console.log("mouseExit");
   exit = event.target.dataset.mouseevent;
-  document.querySelector("#" + exit).classList.remove("hovercolor");
+  if (exit != undefined && exit.startsWith("season")) {
+    document.querySelector("#" + exit).classList.remove("hovercolor");
+    flipBack(exit);
+  }
 }
 
-// - - - - - mouseclick seasons event listers - - - - -
+// - - - - - - - flip enter animation - - - - - - -
+
+function flip(enter) {
+  console.log("flip");
+
+  const flipElements = document.querySelectorAll("#" + enter + " .featured");
+  flipElements.forEach(el => {
+    el.classList.add("flip");
+  });
+  const hideSymbol = document.querySelectorAll(
+    "#" + enter + " .featured_symbol"
+  );
+  hideSymbol.forEach(el => {
+    el.classList.add("hide_symbol");
+  });
+  const flipEvent = document.querySelectorAll("#" + enter + " .featured");
+  flipEvent.forEach(el => {
+    el.addEventListener("animationend", drawLine(enter));
+  });
+}
+
+function drawLine(enter) {
+  console.log("drawLine");
+  const drawTheLine = document.querySelectorAll(
+    "#" + enter + " .featured_line"
+  );
+  drawTheLine.forEach(el => {
+    el.classList.remove("hidden");
+    el.classList.add("line");
+  });
+  setTimeout(function() {
+    scaleStop(enter);
+  }, 200);
+}
+
+function scaleStop(enter) {
+  console.log("scaleStop");
+  const scaleDot = document.querySelectorAll("#" + enter + " .featured_stop");
+  scaleDot.forEach(el => {
+    el.classList.remove("small");
+  });
+}
+
+// - - - - - mouseclick event listners - - - - -
 
 function mouseClick(event) {
   click = event.target.dataset.mouseevent;
