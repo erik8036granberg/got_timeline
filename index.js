@@ -4,7 +4,6 @@ let click;
 let enter;
 let exit;
 let data;
-let timelineHover = true;
 
 window.addEventListener("DOMContentLoaded", init);
 
@@ -13,6 +12,7 @@ function init() {
   document.querySelector("body").addEventListener("click", mouseClick);
   document.querySelector("#slider").addEventListener("input", timelineSlider);
 
+  // mouseover eventlistners
   const seasonIn = document.querySelectorAll(".season");
   seasonIn.forEach(item => {
     item.addEventListener("mouseenter", mouseEnter);
