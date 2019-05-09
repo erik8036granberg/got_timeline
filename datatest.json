@@ -91,6 +91,16 @@
       "position": "2"
     },
     {
+      "name": "Jon Snow",
+      "season": "#season_5",
+      "episode": 10,
+      "length": 60,
+      "time": 56,
+      "symbol": "symbol_dagger.svg",
+      "image": "img_jon.jpg",
+      "position": "1"
+    },
+    {
       "name": "Shrine Baratheon",
       "season": "#season_5",
       "episode": 9,
@@ -98,6 +108,36 @@
       "time": 32,
       "symbol": "symbol_fire.svg",
       "image": "img_shrine.jpg",
+      "position": "5"
+    },
+    {
+      "name": "Alliser Thorne",
+      "season": "#season_6",
+      "episode": 3,
+      "length": 52,
+      "time": 49,
+      "symbol": "symbol_hanged.svg",
+      "image": "img_alliser.jpg",
+      "position": "4"
+    },
+    {
+      "name": "Ramsay Bolton",
+      "season": "#season_6",
+      "episode": 9,
+      "length": 60,
+      "time": 51,
+      "symbol": "symbol_dogs.svg",
+      "image": "img_ramsey.jpg",
+      "position": "1"
+    },
+    {
+      "name": "Tommen Baratheon",
+      "season": "#season_6",
+      "episode": 10,
+      "length": 68,
+      "time": 23,
+      "symbol": "symbol_jump.svg",
+      "image": "img_tommen.jpg",
       "position": "5"
     }
   ],

@@ -1,0 +1,25 @@
+<svg id="Layer_3" data-name="Layer 3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 15px;
+      }
+    </style>
+  </defs>
+  <title>symbol_hanged</title>
+  <circle id="circle_path" class="cls-1" cx="149.5" cy="150.43" r="145.57"/>
+  <circle id="circle_path-2" data-name="circle_path" class="cls-1" cx="149.5" cy="150.43" r="145.57"/>
+  <g>
+    <path class="cls-2" d="M197.75,198c0,28.14-20.17,51-45.06,51s-45-22.82-45-51,35.85-64.67,45.05-64.67C163.84,133.37,197.75,169.89,197.75,198Z"/>
+    <polygon points="158.33 76.88 142.24 80.09 142.24 5 158.33 5 158.33 76.88"/>
+    <rect x="133.65" y="85.46" width="36.47" height="13.95" rx="6.5" transform="translate(-17.56 38.56) rotate(-13.69)"/>
+    <rect x="133.65" y="104.77" width="36.47" height="13.95" rx="6.5" transform="translate(-22.12 39.11) rotate(-13.69)"/>
+  </g>
+</svg>

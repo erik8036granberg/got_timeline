@@ -1,15 +1,15 @@
 :root {
   --season-1: rgba(208, 154, 20, 0.3);
-  --season-2: rgba(199, 48, 45, 0.3);
-  --season-3: rgba(102, 175, 71, 0.3);
+  --season-2: rgba(102, 175, 71, 0.3);
+  --season-3: rgba(199, 48, 45, 0.3);
   --season-4: rgba(3, 110, 182, 0.3);
   --season-5: rgba(6, 179, 156, 0.3);
   --season-6: rgba(105, 17, 58, 0.3);
   --season-7: rgba(170, 170, 170, 0.3);
 
   --season-1-hover: rgba(208, 154, 20, 0.6);
-  --season-2-hover: rgba(199, 48, 45, 0.6);
-  --season-3-hover: rgba(102, 175, 71, 0.6);
+  --season-2-hover: rgba(102, 175, 71, 0.6);
+  --season-3-hover: rgba(199, 48, 45, 0.6);
   --season-4-hover: rgba(3, 110, 182, 0.6);
   --season-5-hover: rgba(6, 179, 156, 0.6);
   --season-6-hover: rgba(105, 17, 58, 0.6);

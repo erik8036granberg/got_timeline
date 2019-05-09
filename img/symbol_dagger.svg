@@ -1,0 +1,17 @@
+<svg id="Layer_3" data-name="Layer 3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <title>symbol_dagger</title>
+  <circle id="circle_path" class="cls-1" cx="149.5" cy="150.43" r="145.57"/>
+  <circle id="circle_path-2" data-name="circle_path" class="cls-1" cx="149.5" cy="150.43" r="145.57"/>
+  <g>
+    <rect x="93.83" y="104" width="111" height="8" rx="4"/>
+    <polygon points="135.08 108 149.33 289 163.58 108 135.08 108"/>
+    <rect x="141.83" y="27" width="15" height="85" rx="7.5"/>
+  </g>
+</svg>

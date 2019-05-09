@@ -1,0 +1,24 @@
+<svg id="Layer_3" data-name="Layer 3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <title>symbol_jump</title>
+  <circle id="circle_path" class="cls-1" cx="149.5" cy="150.43" r="145.57"/>
+  <circle id="circle_path-2" data-name="circle_path" class="cls-1" cx="149.5" cy="150.43" r="145.57"/>
+  <g>
+    <circle cx="148.5" cy="222.65" r="16.54"/>
+    <rect x="124.81" y="134.59" width="47.38" height="65.26" rx="15"/>
+    <g>
+      <rect x="90.84" y="139.95" width="17.88" height="65.26" rx="8.94" transform="translate(-72.92 73.01) rotate(-30)"/>
+      <rect x="188.28" y="139.95" width="17.88" height="65.26" rx="8.94" transform="translate(281.73 420.66) rotate(-150)"/>
+    </g>
+    <g>
+      <rect x="125.7" y="56.81" width="17.88" height="72.41" rx="8.94"/>
+      <rect x="153.42" y="56.81" width="17.88" height="72.41" rx="8.94"/>
+    </g>
+  </g>
+</svg>
