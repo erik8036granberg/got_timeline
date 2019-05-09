@@ -182,6 +182,16 @@ function mouseExit(event) {
 function imageClicked(fixedname, season) {
   console.log("imageClicked");
   console.log(fixedname);
+
+  // get posotion of clicked image after animation
+  setTimeout(function() {
+    const clickedPosition = document
+      .querySelector("#" + fixedname + " .featured")
+      .getBoundingClientRect();
+    console.log(clickedPosition);
+  }, 500);
+
+  // open season
   season = season.substring(1);
   console.log(season);
   setExpanded(season);

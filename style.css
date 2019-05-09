@@ -105,10 +105,10 @@ header img {
 
 .close {
   position: absolute;
-  right: 0;
-  top: 0;
-  width: 4vw;
-  height: 4vw;
+  right: 1vw;
+  top: 1vw;
+  width: 3.5vw;
+  height: 3.5vw;
   z-index: 500;
 }
 
@@ -481,6 +481,8 @@ header img {
     transform: scale(0);
   }
 }
+
+/* - - - - - - - - - - timeline stuff  - - - - - - - - - -  */
 
 #timeline {
   width: 100%;
