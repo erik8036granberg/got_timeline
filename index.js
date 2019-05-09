@@ -339,6 +339,18 @@ function mouseClick(event) {
     season7Expanded();
     setExpanded(click);
   }
+  if (click === "close") {
+    const closeAllSeasons = document.querySelectorAll(".season");
+    closeAllSeasons.forEach(el => {
+      el.classList.remove("zoomview");
+      el.classList.remove("compressed");
+      el.classList.add("overview");
+    });
+    const closeButtons = document.querySelectorAll(".close");
+    closeButtons.forEach(el => {
+      el.classList.add("hidden");
+    });
+  }
 }
 
 function setExpanded(click) {
@@ -350,6 +362,7 @@ function setExpanded(click) {
   closeOthers(click);
   setSeasonName(click);
   setExpandedImages(click);
+  showClose(click);
 }
 
 function closeOthers(click) {
@@ -390,6 +403,16 @@ function removeExpandedImages(click) {
   expandedImages.forEach(el => {
     el.classList.remove("flipped_expanded");
   });
+}
+
+function showClose(click) {
+  console.log("showClose");
+  document.querySelector("#" + click + " .close").classList.remove("hidden");
+}
+
+function hideClose(click) {
+  console.log("showClose");
+  document.querySelector("#" + click + " .close").classList.remove("hidden");
 }
 
 // - - - - - expanded seasons - - - - -
