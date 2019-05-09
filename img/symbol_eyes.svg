@@ -1,0 +1,23 @@
+<svg id="Layer_3" data-name="Layer 3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 15px;
+      }
+    </style>
+  </defs>
+  <title>symbol_eyes</title>
+  <circle id="circle_path" class="cls-1" cx="149.5" cy="150.43" r="145.57"/>
+  <circle id="circle_path-2" data-name="circle_path" class="cls-1" cx="149.5" cy="150.43" r="145.57"/>
+  <g>
+    <path class="cls-2" d="M255,150.71s-57.53,62.71-105.75,62.71S43.5,150.71,43.5,150.71,101,88,149.25,88,255,150.71,255,150.71Z"/>
+    <circle cx="149.25" cy="150.71" r="23.38"/>
+  </g>
+</svg>

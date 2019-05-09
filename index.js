@@ -127,9 +127,9 @@ function cloneFeatured(featuredDeaths) {
     .setAttribute("xlink:href", `img/${image}`);
 
   // calculate timeline position i season
-  const timeline_pos = episode * 10 - 1 + (time * 10) / length;
+  const timeline_pos = episode * (10 - 1) + (time * 10) / length;
   console.log(timeline_pos + "%");
-  clone.style.left = `calc(${timeline_pos}% - 75px)`;
+  clone.style.left = `calc(${timeline_pos}% - 65px)`;
 
   // add eventlistners
   clone.addEventListener("click", () => {
@@ -236,23 +236,36 @@ function scaleStop(enter) {
   scaleDot.forEach(el => {
     el.classList.add("scalein");
   });
+  const stopScale = document.querySelectorAll("#" + enter + " .featured_stop");
+  stopScale.forEach(el => {
+    el.addEventListener("animationend", scaledIn(enter));
+  });
 }
 
+function scaledIn(enter) {
+  console.log("scaledIn");
+  const scaledInDone = document.querySelectorAll(
+    "#" + enter + " .featured_stop"
+  );
+  scaledInDone.forEach(el => {
+    el.classList.remove("scalein");
+    el.classList.add("scaledin");
+  });
+}
 // - - - - - - - flip back animation - - - - - - -
 
 function stopBack(exit) {
   console.log("stopBack");
 
-  const scaleDot = document.querySelectorAll("#" + exit + " .featured_stop");
-  scaleDot.forEach(el => {
-    el.classList.remove("scalein");
+  const scaleDotDown = document.querySelectorAll(
+    "#" + exit + " .featured_stop"
+  );
+  scaleDotDown.forEach(el => {
+    el.classList.remove("scaledin");
     el.classList.add("scaleout");
-    setTimeout(function() {
-      el.classList.remove("scaleout");
-    }, 200);
   });
-  const stopEvent = document.querySelectorAll("#" + enter + " .featured_stop");
-  stopEvent.forEach(el => {
+  const scaleOut = document.querySelectorAll("#" + enter + " .featured_stop");
+  scaleOut.forEach(el => {
     el.addEventListener("animationend", removeLine(exit));
   });
 }

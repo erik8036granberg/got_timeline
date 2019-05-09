@@ -1,0 +1,21 @@
+<svg id="Layer_3" data-name="Layer 3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #020202;
+      }
+    </style>
+  </defs>
+  <title>symbol_toilet</title>
+  <circle id="circle_path" class="cls-1" cx="149.5" cy="150.43" r="145.57"/>
+  <circle id="circle_path-2" data-name="circle_path" class="cls-1" cx="149.5" cy="150.43" r="145.57"/>
+  <g>
+    <path class="cls-2" d="M161.38,152H72.43S63,152,63,159.3c0,9.18-3.14,55.7,90,55.7h45V152Z"/>
+    <rect class="cls-2" x="150" y="72" width="49" height="123" rx="15"/>
+    <path class="cls-2" d="M167,184c-64.15,0-62,39.14-62,46.86,0,6.14,6.49,6.14,6.49,6.14H137c0-11.6,7.84-21,17.5-21s17.5,9.4,17.5,21h26V184Z"/>
+  </g>
+</svg>
