@@ -9,7 +9,7 @@
   <title>svg_title</title>
   <rect class="cls-2 featured_stop" x="93.5" y="387" width="13" height="13"/>
   <line class="cls-3 featured_line" x1="100" y1="165" x2="100" y2="393"/>
-  <g class="featured">
+  <g class="featured template_3">
   <g class="clippath-3 featured_image">
     <image width="300" height="300" transform="translate(68 133) scale(0.21)" xlink:href="img/img_template.jpg"/>
   </g>

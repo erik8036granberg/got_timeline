@@ -225,8 +225,8 @@ header img {
   height: auto;
   bottom: 34vh;
   left: -65px;
-  z-index: 100;
   pointer-events: none;
+  z-index: 500;
 }
 
 #seasons .compressed .featured_svg {
@@ -329,7 +329,6 @@ header img {
 .flipped:hover {
   transform: perspective(0) rotateY(-180.1deg) rotateX(0deg) scale(1.9);
   transition: 0.3s ease-in;
-  z-index: 200;
   cursor: pointer;
 }
 

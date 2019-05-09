@@ -191,7 +191,6 @@ function imageClicked(fixedname, season) {
 
 function flip(enter) {
   console.log("flip");
-
   const flipElements = document.querySelectorAll("#" + enter + " .featured");
   flipElements.forEach(el => {
     el.classList.add("flip");
@@ -261,10 +260,11 @@ function stopBack(exit) {
     "#" + exit + " .featured_stop"
   );
   scaleDotDown.forEach(el => {
+    el.classList.remove("scalein");
     el.classList.remove("scaledin");
     el.classList.add("scaleout");
   });
-  const scaleOut = document.querySelectorAll("#" + enter + " .featured_stop");
+  const scaleOut = document.querySelectorAll("#" + exit + " .featured_stop");
   scaleOut.forEach(el => {
     el.addEventListener("animationend", removeLine(exit));
   });

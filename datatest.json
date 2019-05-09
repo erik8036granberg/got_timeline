@@ -7,7 +7,7 @@
       "length": 53,
       "time": 51,
       "symbol": "symbol_crown.svg",
-      "image": "img_targaryen.jpg",
+      "image": "img_viserys.jpg",
       "position": "4"
     },
     {
@@ -17,7 +17,7 @@
       "length": 57,
       "time": 55,
       "symbol": "symbol_sword.svg",
-      "image": "img_stark.jpg",
+      "image": "img_eddard.jpg",
       "position": "1"
     },
     {
@@ -27,28 +27,8 @@
       "length": 55,
       "time": 4,
       "symbol": "symbol_ghost.svg",
-      "image": "img_r_baratheon.jpg",
+      "image": "img_renly.jpg",
       "position": "5"
-    },
-    {
-      "name": "Talisa Stark",
-      "season": "#season_3",
-      "episode": 9,
-      "length": 51,
-      "time": 44,
-      "symbol": "symbol_wedding.svg",
-      "image": "img_t_stark.jpg",
-      "position": "5"
-    },
-    {
-      "name": "Robb Stark",
-      "season": "#season_3",
-      "episode": 9,
-      "length": 51,
-      "time": 49,
-      "symbol": "symbol_wedding.svg",
-      "image": "img_r_stark.jpg",
-      "position": "3"
     },
     {
       "name": "Catelyn Stark",
@@ -57,28 +37,28 @@
       "length": 51,
       "time": 49,
       "symbol": "symbol_wedding.svg",
-      "image": "img_c_stark.jpg",
+      "image": "img_catelyn.jpg",
       "position": "1"
     },
     {
-      "name": "Joffrey Baratheon",
-      "season": "#season_4",
-      "episode": 2,
-      "length": 52,
-      "time": 48,
-      "symbol": "symbol_poison.svg",
-      "image": "img_j_Baratheon.jpg",
-      "position": "2"
+      "name": "Robb Stark",
+      "season": "#season_3",
+      "episode": 9,
+      "length": 51,
+      "time": 49,
+      "symbol": "symbol_wedding.svg",
+      "image": "img_robb.jpg",
+      "position": "3"
     },
     {
-      "name": "Oberyn Martell",
-      "season": "#season_4",
-      "episode": 8,
-      "length": 52,
-      "time": 50,
-      "symbol": "symbol_eyes.svg",
-      "image": "img_j_Baratheon.jpg",
-      "position": "4"
+      "name": "Talisa Stark",
+      "season": "#season_3",
+      "episode": 9,
+      "length": 51,
+      "time": 44,
+      "symbol": "symbol_wedding.svg",
+      "image": "img_talisa.jpg",
+      "position": "5"
     },
     {
       "name": "Tywin Lannister",
@@ -87,8 +67,28 @@
       "length": 65,
       "time": 58,
       "symbol": "symbol_toilet.svg",
-      "image": "img_t_lannister.jpg",
+      "image": "img_tywin.jpg",
       "position": "1"
+    },
+    {
+      "name": "Oberyn Martell",
+      "season": "#season_4",
+      "episode": 8,
+      "length": 52,
+      "time": 50,
+      "symbol": "symbol_eyes.svg",
+      "image": "img_oberyn.jpg",
+      "position": "4"
+    },
+    {
+      "name": "Joffrey Baratheon",
+      "season": "#season_4",
+      "episode": 2,
+      "length": 52,
+      "time": 48,
+      "symbol": "symbol_poison.svg",
+      "image": "img_joffrey.jpg",
+      "position": "2"
     },
     {
       "name": "Shrine Baratheon",
@@ -97,7 +97,7 @@
       "length": 52,
       "time": 32,
       "symbol": "symbol_fire.svg",
-      "image": "img_t_lannister.jpg",
+      "image": "img_shrine.jpg",
       "position": "5"
     }
   ],
