@@ -575,3 +575,21 @@ header img {
   font-size: 3rem;
   line-height: 3rem;
 }
+
+#infobox_eddard {
+  position: absolute;
+  width: 40vw;
+  height: 300px;
+  bottom: 40vh;
+  right: 5vw;
+  z-index: 800;
+}
+
+#infobox_targaryen {
+  position: absolute;
+  width: 40vw;
+  height: 300px;
+  bottom: 40vh;
+  right: 5vw;
+  z-index: 800;
+}

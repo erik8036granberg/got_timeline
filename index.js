@@ -166,7 +166,6 @@ function symbolStart() {
 // - - - - - mouseover event listners - - - - -
 
 function mouseEnter(event) {
-  console.log(event);
   enter = event.target.dataset.mouseevent;
   flip(enter);
 }
@@ -181,15 +180,8 @@ function mouseExit(event) {
 
 function imageClicked(fixedname, season) {
   console.log("imageClicked");
-  console.log(fixedname);
 
-  // get posotion of clicked image after animation
-  setTimeout(function() {
-    const clickedPosition = document
-      .querySelector("#" + fixedname + " .featured")
-      .getBoundingClientRect();
-    console.log(clickedPosition);
-  }, 500);
+  setTimeout(infobox(fixedname), 500);
 
   // open season
   season = season.substring(1);
@@ -197,10 +189,31 @@ function imageClicked(fixedname, season) {
   setExpanded(season);
 }
 
+function infobox(fixedname) {
+  // get posotion of clicked image after animation
+  const clickedPosition = document
+    .querySelector("#" + fixedname + " .featured")
+    .getBoundingClientRect();
+  console.log(clickedPosition);
+
+  if (fixedname === "eddard_stark") {
+    document.querySelector("#infobox_eddard").classList.remove("hidden");
+  }
+
+  if (fixedname === "viserys_targaryen") {
+    document.querySelector("#infobox_targaryen").classList.remove("hidden");
+  }
+
+  // calculate centerpoint
+  const x_pos = clickedPosition.x;
+  const y_pos = clickedPosition.y;
+  console.log(x_pos);
+  console.log(y_pos);
+}
+
 // - - - - - - - flip enter animation - - - - - - -
 
 function flip(enter) {
-  console.log("flip");
   const flipElements = document.querySelectorAll("#" + enter + " .featured");
   flipElements.forEach(el => {
     el.classList.add("flip");
@@ -218,7 +231,6 @@ function flip(enter) {
 }
 
 function drawLine(enter) {
-  console.log("drawLine");
   setTimeout(function() {
     const setFlipped = document.querySelectorAll("#" + enter + " .featured");
     setFlipped.forEach(el => {
@@ -240,7 +252,6 @@ function drawLine(enter) {
 }
 
 function scaleStop(enter) {
-  console.log("scaleStop");
   const scaleDot = document.querySelectorAll("#" + enter + " .featured_stop");
   scaleDot.forEach(el => {
     el.classList.add("scalein");
@@ -252,7 +263,6 @@ function scaleStop(enter) {
 }
 
 function scaledIn(enter) {
-  console.log("scaledIn");
   const scaledInDone = document.querySelectorAll(
     "#" + enter + " .featured_stop"
   );
@@ -264,8 +274,6 @@ function scaledIn(enter) {
 // - - - - - - - flip back animation - - - - - - -
 
 function stopBack(exit) {
-  console.log("stopBack");
-
   const scaleDotDown = document.querySelectorAll(
     "#" + exit + " .featured_stop"
   );
@@ -281,7 +289,6 @@ function stopBack(exit) {
 }
 
 function removeLine(exit) {
-  console.log("removeLine");
   const removeTheLine = document.querySelectorAll(
     "#" + exit + " .featured_line"
   );
@@ -295,7 +302,6 @@ function removeLine(exit) {
 }
 
 function flipBack(exit) {
-  console.log("flipBack");
   const flipElementsBack = document.querySelectorAll("#" + exit + " .featured");
   flipElementsBack.forEach(el => {
     el.classList.remove("flipped");
@@ -364,7 +370,6 @@ function mouseClick(event) {
 }
 
 function setExpanded(click) {
-  console.log("setExpanded");
   // expand clicked
   document.querySelector("#" + click).classList.add("zoomview");
   document.querySelector("#" + click).classList.remove("overview");
@@ -400,7 +405,6 @@ function setSeasonName(click) {
 }
 
 function setExpandedImages(click) {
-  console.log("setExpandedImages");
   const expandedImages = document.querySelectorAll("#" + click + " .featured");
   expandedImages.forEach(el => {
     el.classList.add("flipped_expanded");
@@ -408,7 +412,6 @@ function setExpandedImages(click) {
 }
 
 function removeExpandedImages(click) {
-  console.log("removeExpandedImages");
   const expandedImages = document.querySelectorAll("#" + click + " .featured");
   expandedImages.forEach(el => {
     el.classList.remove("flipped_expanded");
