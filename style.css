@@ -598,13 +598,12 @@ header img {
 #modal {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.25);
-  z-index: 600;
+  z-index: 888 !important;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   pointer-events: all;
-  transition: 2s;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -618,7 +617,7 @@ header img {
 #modal_box {
   position: absolute;
   background-color: hotpink;
-  z-index: 600;
+  z-index: 999;
   border: 2px;
   pointer-events: all;
   min-width: 112px;
@@ -636,12 +635,29 @@ header img {
 
 .fadeout {
   opacity: 0;
-  transition: 1s;
   pointer-events: none;
 }
 
-.viewbox_scale {
-  min-width: 80vw;
-  min-height: 80vh;
+.viewbox_set {
+  min-width: 112px !important;
+  min-height: 112px !important;
+  transition: 3s;
+  left: auto !important;
+  top: auto !important;
   transition: 2s;
 }
+
+/* .viewbox_scale {
+  animation: viewbox_scale 0.2s ease-in forwards;
+}
+
+@keyframes scaleout_frames {
+  0% {
+    min-width: 112px !important;
+    min-height: 112px !important;
+  }
+  100% {
+    min-width: 50vw !important;
+    min-height: 50vh !important;
+  }
+} */

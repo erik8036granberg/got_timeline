@@ -451,7 +451,8 @@ function modal(fixedname, season) {
   document.querySelector("#modal").classList.remove("hidden");
 
   // scale modal to view size animation
-  modal_box.classList.add("viewbox_scale");
+  modal_box.classList.add("viewbox_set");
+  // modal_box.classList.add("viewbox_scale");
 
   // get content from json
 }
