@@ -605,6 +605,7 @@ header img {
   min-width: 112px;
   min-height: 112px;
   align-self: center;
+  padding: 3vw;
 }
 
 #modal img {
