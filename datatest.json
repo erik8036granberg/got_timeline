@@ -7,7 +7,7 @@
       "length": 53,
       "time": 51,
       "symbol": "symbol_crown.svg",
-      "image": "img_viserys.jpg",
+      "image": "img_viserys_targaryen.jpg",
       "position": "4"
     },
     {
@@ -17,7 +17,7 @@
       "length": 57,
       "time": 55,
       "symbol": "symbol_sword.svg",
-      "image": "img_eddard.jpg",
+      "image": "img_eddard_stark.jpg",
       "position": "1"
     },
     {
@@ -27,7 +27,7 @@
       "length": 55,
       "time": 4,
       "symbol": "symbol_ghost.svg",
-      "image": "img_renly.jpg",
+      "image": "img_renly_baratheon.jpg",
       "position": "5"
     },
     {
@@ -37,7 +37,7 @@
       "length": 51,
       "time": 49,
       "symbol": "symbol_wedding.svg",
-      "image": "img_catelyn.jpg",
+      "image": "img_catelyn_stark.jpg",
       "position": "1"
     },
     {
@@ -47,7 +47,7 @@
       "length": 51,
       "time": 49,
       "symbol": "symbol_wedding.svg",
-      "image": "img_robb.jpg",
+      "image": "img_robb_stark.jpg",
       "position": "3"
     },
     {
@@ -57,7 +57,7 @@
       "length": 51,
       "time": 44,
       "symbol": "symbol_wedding.svg",
-      "image": "img_talisa.jpg",
+      "image": "img_talisa_stark.jpg",
       "position": "5"
     },
     {
@@ -67,7 +67,7 @@
       "length": 65,
       "time": 58,
       "symbol": "symbol_toilet.svg",
-      "image": "img_tywin.jpg",
+      "image": "img_tywin_lannister.jpg",
       "position": "1"
     },
     {
@@ -77,7 +77,7 @@
       "length": 52,
       "time": 50,
       "symbol": "symbol_eyes.svg",
-      "image": "img_oberyn.jpg",
+      "image": "img_oberyn_martell.jpg",
       "position": "4"
     },
     {
@@ -87,7 +87,7 @@
       "length": 52,
       "time": 48,
       "symbol": "symbol_poison.svg",
-      "image": "img_joffrey.jpg",
+      "image": "img_joffrey_baratheon.jpg",
       "position": "2"
     },
     {
@@ -97,7 +97,7 @@
       "length": 60,
       "time": 56,
       "symbol": "symbol_dagger.svg",
-      "image": "img_jon.jpg",
+      "image": "img_jon_snow.jpg",
       "position": "1"
     },
     {
@@ -107,7 +107,7 @@
       "length": 52,
       "time": 32,
       "symbol": "symbol_fire.svg",
-      "image": "img_shrine.jpg",
+      "image": "img_shrine_baratheon.jpg",
       "position": "5"
     },
     {
@@ -117,7 +117,7 @@
       "length": 52,
       "time": 49,
       "symbol": "symbol_hanged.svg",
-      "image": "img_alliser.jpg",
+      "image": "img_alliser_thorne.jpg",
       "position": "4"
     },
     {
@@ -127,7 +127,7 @@
       "length": 60,
       "time": 51,
       "symbol": "symbol_dogs.svg",
-      "image": "img_ramsey.jpg",
+      "image": "img_ramsey_bolton.jpg",
       "position": "1"
     },
     {
@@ -137,7 +137,7 @@
       "length": 68,
       "time": 23,
       "symbol": "symbol_jump.svg",
-      "image": "img_tommen.jpg",
+      "image": "img_tommen_baratheon.jpg",
       "position": "5"
     }
   ],

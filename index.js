@@ -180,13 +180,13 @@ function mouseClick(event) {
 // - - - - - mouseover event listners - - - - -
 
 function mouseEnter(event) {
-  // flip featured on mouse enter on season
+  // flip featured on mouse-enter
   enter = event.target.dataset.mouseevent;
   flip(enter);
 }
 
 function mouseExit(event) {
-  // flip featured back on mouse enter on season
+  // flip featured back on mouse-leave
   exit = event.target.dataset.mouseevent;
   removeExpandedImages(exit);
   stopBack(exit);
@@ -229,7 +229,7 @@ function setSeasonName(click) {
 }
 
 function setExpandedImages(click) {
-  // set animation still/position
+  // set enlarged featured image
   const expandedImages = document.querySelectorAll("#" + click + " .featured");
   expandedImages.forEach(el => {
     el.classList.add("flipped_expanded");
@@ -252,8 +252,8 @@ function removeExpanded() {
     el.classList.remove("compressed");
     el.classList.add("overview");
   });
-  hideClose();
   resetSeasonName();
+  hideClose();
 }
 
 function resetSeasonName() {
@@ -267,7 +267,7 @@ function resetSeasonName() {
 }
 
 function removeExpandedImages(click) {
-  // remove animation still/position
+  // remove enlarged featured image
   const expandedImages = document.querySelectorAll("#" + click + " .featured");
   expandedImages.forEach(el => {
     el.classList.remove("flipped_expanded");
@@ -286,16 +286,19 @@ function hideClose(click) {
 // - - - - - - - flip enter animation - - - - - - -
 
 function flip(enter) {
+  // flip image group
   const flipElements = document.querySelectorAll("#" + enter + " .featured");
   flipElements.forEach(el => {
     el.classList.add("flip");
   });
+  // hide symbol half way on turn
   const hideSymbol = document.querySelectorAll(
     "#" + enter + " .featured_symbol"
   );
   hideSymbol.forEach(el => {
     el.classList.add("hide_symbol");
   });
+  // draw line on animation end
   const flipEvent = document.querySelectorAll("#" + enter + " .featured");
   flipEvent.forEach(el => {
     el.addEventListener("animationend", drawLine(enter));
@@ -303,6 +306,7 @@ function flip(enter) {
 }
 
 function drawLine(enter) {
+  // set flipped state for image group
   setTimeout(function() {
     const setFlipped = document.querySelectorAll("#" + enter + " .featured");
     setFlipped.forEach(el => {
@@ -310,6 +314,7 @@ function drawLine(enter) {
       el.classList.add("flipped");
     });
   }, 300);
+  // draw line
   const drawTheLine = document.querySelectorAll(
     "#" + enter + " .featured_line"
   );
@@ -318,12 +323,14 @@ function drawLine(enter) {
     el.classList.remove("lineback");
     el.classList.add("drawline");
   });
+  // go to line stop after time
   setTimeout(function() {
     scaleStop(enter);
   }, 200);
 }
 
 function scaleStop(enter) {
+  // line stop scale in animation
   const scaleDot = document.querySelectorAll("#" + enter + " .featured_stop");
   scaleDot.forEach(el => {
     el.classList.add("scalein");
@@ -335,6 +342,7 @@ function scaleStop(enter) {
 }
 
 function scaledIn(enter) {
+  // line stop scale animation state
   const scaledInDone = document.querySelectorAll(
     "#" + enter + " .featured_stop"
   );
@@ -343,9 +351,11 @@ function scaledIn(enter) {
     el.classList.add("scaledin");
   });
 }
+
 // - - - - - - - flip back animation - - - - - - -
 
 function stopBack(exit) {
+  // line stop scale out animation
   const scaleDotDown = document.querySelectorAll(
     "#" + exit + " .featured_stop"
   );
@@ -361,6 +371,7 @@ function stopBack(exit) {
 }
 
 function removeLine(exit) {
+  // draw line back
   const removeTheLine = document.querySelectorAll(
     "#" + exit + " .featured_line"
   );
@@ -374,6 +385,7 @@ function removeLine(exit) {
 }
 
 function flipBack(exit) {
+  // remove flipped animation state & flip back
   const flipElementsBack = document.querySelectorAll("#" + exit + " .featured");
   flipElementsBack.forEach(el => {
     el.classList.remove("flipped");
@@ -382,6 +394,7 @@ function flipBack(exit) {
       el.classList.remove("flipback");
     }, 200);
   });
+  // show symbol on half way of animation
   const showSymbol = document.querySelectorAll(
     "#" + exit + " .featured_symbol"
   );
@@ -399,34 +412,55 @@ function flipBack(exit) {
 function imageClicked(fixedname, season, time) {
   console.log("imageClicked");
 
-  setTimeout(infobox(fixedname), 500);
-
-  // open season
+  // open season if not open
   season = season.substring(1);
   console.log(season);
   setExpanded(season);
+
+  // timeout for correct position in case of animation
+  setTimeout(function() {
+    modal(fixedname, season);
+  }, 300);
 }
 
-function infobox(fixedname) {
-  // get posotion of clicked image after animation
+function modal(fixedname, season) {
+  // get posotion of clicked image
   const clickedPosition = document
     .querySelector("#" + fixedname + " .featured")
     .getBoundingClientRect();
   console.log(clickedPosition);
+  const target_x_pos = clickedPosition.x;
+  const target_y_pos = clickedPosition.y;
+  const target_size = clickedPosition.width;
 
-  if (fixedname === "eddard_stark") {
-    document.querySelector("#infobox_eddard").classList.remove("hidden");
-  }
+  // set position and size of modal
+  const modal = document.querySelector("#modal_box, #modal_box img");
+  modal.style.left = target_x_pos + "px";
+  modal.style.top = target_y_pos + "px";
+  modal.style.height = target_size + "px";
+  modal.style.width = target_size + "px";
 
-  if (fixedname === "viserys_targaryen") {
-    document.querySelector("#infobox_targaryen").classList.remove("hidden");
-  }
+  // set image
+  document.querySelector("#modal img").src = "img/img_" + fixedname + ".jpg";
 
-  // calculate centerpoint
-  const x_pos = clickedPosition.x;
-  const y_pos = clickedPosition.y;
-  console.log(x_pos);
-  console.log(y_pos);
+  // show modal
+  document.querySelector("#modal").classList.remove("hidden");
+
+  const closeSvg = document.querySelectorAll(".featured_svg");
+  closeSvg.forEach(el => {
+    el.classList.remove("fadeout");
+  });
+
+  // scale modal to view size animation
+  // get content from json
+
+  // if (fixedname === "eddard_stark") {
+  //   document.querySelector("#infobox_eddard").classList.remove("hidden");
+  // }
+
+  // if (fixedname === "viserys_targaryen") {
+  //   document.querySelector("#infobox_targaryen").classList.remove("hidden");
+  // }
 }
 
 //  - - - - - - - - - slider - - - - - - - - -
