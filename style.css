@@ -14,6 +14,14 @@
   --season-5-hover: rgba(6, 179, 156, 0.6);
   --season-6-hover: rgba(105, 17, 58, 0.6);
   --season-7-hover: rgba(170, 170, 170, 0.6);
+
+  --season-1-full: rgba(208, 154, 20, 1);
+  --season-2-full: rgba(102, 175, 71, 1);
+  --season-3-full: rgba(199, 48, 45, 1);
+  --season-4-full: rgba(3, 110, 182, 1);
+  --season-5-full: rgba(6, 179, 156, 1);
+  --season-6-full: rgba(105, 17, 58, 1);
+  --season-7-full: rgba(170, 170, 170, 1);
 }
 
 * {
@@ -598,14 +606,56 @@ header img {
 
 #modal_box {
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.85);
   z-index: 999;
   border: 2px;
   pointer-events: none;
   min-width: 112px;
   min-height: 112px;
   align-self: center;
-  padding: 3vw;
+  padding: 5rem;
+  color: #000;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2rem;
+}
+
+#modal_box h4 {
+  font-size: 1.2rem;
+  line-height: 1rem;
+  grid-column: 1 / span 3;
+}
+
+#modal_box h2 {
+  font-size: 2.5rem;
+  line-height: 2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--season-1-full);
+  grid-column: 1 / span 3;
+}
+
+#modal_box h3 {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--season-1-full);
+  grid-column: 1 / span 3;
+}
+
+#modal_box p {
+  margin-bottom: 1rem;
+}
+
+#modal_box .column_1 {
+  grid-column: 1 / span 1;
+}
+
+#modal_box .column_2 {
+  grid-column: 2 / span 2;
 }
 
 #modal img {
