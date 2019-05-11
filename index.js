@@ -420,7 +420,7 @@ function imageClicked(fixedname, season, time) {
   // timeout for correct position in case of animation
   setTimeout(function() {
     modal(fixedname, season);
-  }, 300);
+  }, 500);
 }
 
 function modal(fixedname, season) {
@@ -446,12 +446,8 @@ function modal(fixedname, season) {
   // show modal
   document.querySelector("#modal").classList.remove("hidden");
 
-  const closeSvg = document.querySelectorAll(".featured_svg");
-  closeSvg.forEach(el => {
-    el.classList.remove("fadeout");
-  });
-
   // scale modal to view size animation
+
   // get content from json
 
   // if (fixedname === "eddard_stark") {

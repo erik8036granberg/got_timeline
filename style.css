@@ -617,14 +617,17 @@ header img {
   background-color: hotpink;
   z-index: 600;
   transform: scaleX(-1);
-  border-radius: 50%;
   border: 2px;
   pointer-events: all;
+  min-width: 112px;
+  min-height: 112px;
 }
 
 #modal img {
   border-radius: 50%;
   border: 2px solid #fff;
+  min-width: 112px;
+  min-height: 112px;
 }
 
 .fadeout {
