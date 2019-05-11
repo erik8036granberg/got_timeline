@@ -133,7 +133,7 @@ function cloneFeatured(featuredDeaths) {
 
   // add eventlistners
   clone.addEventListener("click", () => {
-    imageClicked(fixedname, season);
+    imageClicked(fixedname, season, time);
   });
 
   // append it destination season div
@@ -178,7 +178,7 @@ function mouseExit(event) {
 
 // - - - - - - - click on image - - - - - - -
 
-function imageClicked(fixedname, season) {
+function imageClicked(fixedname, season, time) {
   console.log("imageClicked");
 
   setTimeout(infobox(fixedname), 500);
@@ -326,35 +326,11 @@ function flipBack(exit) {
 
 function mouseClick(event) {
   click = event.target.dataset.mouseevent;
-  console.log("mouseClick");
-  if (click === "season_1") {
-    season1Expanded();
+  if (click != undefined && click.startsWith("season")) {
+    event.preventDefault();
     setExpanded(click);
   }
-  if (click === "season_2") {
-    season2Expanded();
-    setExpanded(click);
-  }
-  if (click === "season_3") {
-    season3Expanded();
-    setExpanded(click);
-  }
-  if (click === "season_4") {
-    season4Expanded();
-    setExpanded(click);
-  }
-  if (click === "season_5") {
-    season5Expanded();
-    setExpanded(click);
-  }
-  if (click === "season_6") {
-    season6Expanded();
-    setExpanded(click);
-  }
-  if (click === "season_7") {
-    season7Expanded();
-    setExpanded(click);
-  }
+
   if (click === "close") {
     const closeAllSeasons = document.querySelectorAll(".season");
     closeAllSeasons.forEach(el => {
@@ -426,36 +402,6 @@ function showClose(click) {
 function hideClose(click) {
   console.log("showClose");
   document.querySelector("#" + click + " .close").classList.remove("hidden");
-}
-
-// - - - - - expanded seasons - - - - -
-
-function season1Expanded() {
-  console.log("season1Expanded");
-}
-
-function season2Expanded() {
-  console.log("season2Expanded");
-}
-
-function season3Expanded() {
-  console.log("season3Expanded");
-}
-
-function season4Expanded() {
-  console.log("season4Expanded");
-}
-
-function season5Expanded() {
-  console.log("season5Expanded");
-}
-
-function season6Expanded() {
-  console.log("season6Expanded");
-}
-
-function season7Expanded() {
-  console.log("season7Expanded");
 }
 
 //  - - - - - - - - - slider overview state - - - - - - - - -
