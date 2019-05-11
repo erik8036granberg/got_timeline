@@ -577,24 +577,6 @@ header img {
   line-height: 3rem;
 }
 
-#infobox_eddard {
-  position: absolute;
-  width: 40vw;
-  height: 300px;
-  bottom: 40vh;
-  right: 5vw;
-  z-index: 800;
-}
-
-#infobox_targaryen {
-  position: absolute;
-  width: 40vw;
-  height: 300px;
-  bottom: 40vh;
-  right: 5vw;
-  z-index: 800;
-}
-
 #modal {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.25);
@@ -616,10 +598,10 @@ header img {
 
 #modal_box {
   position: absolute;
-  background-color: hotpink;
+  background-color: rgba(255, 255, 255, 0.75);
   z-index: 999;
   border: 2px;
-  pointer-events: all;
+  pointer-events: none;
   min-width: 112px;
   min-height: 112px;
   align-self: center;
@@ -628,9 +610,8 @@ header img {
 #modal img {
   border-radius: 50%;
   border: 2px solid #fff;
-  min-width: 112px;
-  min-height: 112px;
-  transform: scaleX(-1);
+  max-width: 130px;
+  max-height: 130px;
 }
 
 .fadeout {
@@ -638,26 +619,22 @@ header img {
   pointer-events: none;
 }
 
-.viewbox_set {
-  min-width: 112px !important;
-  min-height: 112px !important;
-  transition: 3s;
-  left: auto !important;
-  top: auto !important;
-  transition: 2s;
+#modal_box.scale {
+  left: 25%;
+  top: 25%;
+  width: 50%;
+  min-height: 50%;
+  transition: 0.5s;
+  pointer-events: all;
+  border: 2px solid #fff;
 }
 
-/* .viewbox_scale {
-  animation: viewbox_scale 0.2s ease-in forwards;
+#modal_box.scale img {
+  position: absolute;
+  left: -56px;
+  top: -56px;
+  transform: scaleX(-1) scale(1.2);
+  transform-origin: center;
+  transform-box: fill-box;
+  transition: 0.5s;
 }
-
-@keyframes scaleout_frames {
-  0% {
-    min-width: 112px !important;
-    min-height: 112px !important;
-  }
-  100% {
-    min-width: 50vw !important;
-    min-height: 50vh !important;
-  }
-} */
