@@ -24,6 +24,28 @@
   --season-7-full: rgba(170, 170, 170, 1);
 }
 
+.season_1 {
+  color: rgba(208, 154, 20, 1);
+}
+.season_2 {
+  color: rgba(102, 175, 71, 1);
+}
+.season_3 {
+  color: rgba(199, 48, 45, 1);
+}
+.season_4 {
+  color: rgba(3, 110, 182, 1);
+}
+.season_5 {
+  color: rgba(6, 179, 156, 1);
+}
+.season_6 {
+  color: rgba(105, 17, 58, 1);
+}
+.season_7 {
+  color: rgba(170, 170, 170, 1);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -633,7 +655,6 @@ header img {
   line-height: 2rem;
   text-transform: uppercase;
   font-weight: bold;
-  color: var(--season-1-full);
   grid-column: 1 / span 3;
 }
 
@@ -642,7 +663,6 @@ header img {
   line-height: 2rem;
   text-transform: uppercase;
   font-weight: bold;
-  color: var(--season-1-full);
   grid-column: 1 / span 3;
 }
 

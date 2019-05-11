@@ -433,6 +433,12 @@ function modal(fixedname, season) {
   // scale modal to view size animation
   document.querySelector("#modal_box").classList.add("scale");
 
+  document.querySelector("#modal_box h2").classList.add(`${season}`);
+  const colorH3 = document.querySelectorAll("#modal_box h3");
+  colorH3.forEach(el => {
+    el.classList.add(`${season}`);
+  });
+
   // get content from json
 }
 
