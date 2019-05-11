@@ -31,7 +31,7 @@ function loadJSON() {
     });
 }
 
-// - - - - - - - load svg templates .....TODO: DRY this - - - - - - -
+// - - - - - - - load svg templates .....TODO: DRY this?? - - - - - - -
 
 function loadSVGtemplate1() {
   fetch("img/template_1.svg")
@@ -92,6 +92,7 @@ function getFeatured() {
 
 function cloneFeatured(featuredDeaths) {
   console.log("cloneFeatured");
+  // vars for json data
   let fixedname;
   const name = featuredDeaths.name;
   const symbol = featuredDeaths.symbol;
@@ -111,9 +112,7 @@ function cloneFeatured(featuredDeaths) {
     .split(" ")
     .join("_")
     .toLowerCase();
-
   clone.id = fixedname;
-
   clone.querySelector("title").textContent = name;
 
   // set symbol path
@@ -138,7 +137,6 @@ function cloneFeatured(featuredDeaths) {
 
   // append it destination season div
   document.querySelector(`${season}`).appendChild(clone);
-
   symbolStart();
 }
 
@@ -146,6 +144,7 @@ function cloneFeatured(featuredDeaths) {
 
 function symbolStart() {
   console.log("symbolStart");
+  //zoom in effect
   const allStart = document.querySelectorAll(".featured");
   allStart.forEach(el => {
     el.classList.add("appear");
@@ -153,62 +152,135 @@ function symbolStart() {
       el.classList.remove("appear");
     }, 1000);
   });
+  // hide lines
   const hideLines = document.querySelectorAll(".featured_line");
   hideLines.forEach(el => {
     el.classList.add("hidden");
   });
+  //hide line stop
   const scaleStopes = document.querySelectorAll(".featured_stop");
   scaleStopes.forEach(el => {
     el.classList.add("small");
   });
 }
 
+// - - - - - mouseclick event listners - - - - -
+
+function mouseClick(event) {
+  // mouse click
+  click = event.target.dataset.mouseevent;
+  if (click != undefined && click.startsWith("season")) {
+    setExpanded(click);
+  }
+  if (click === "close") {
+    removeExpanded();
+  }
+}
+
 // - - - - - mouseover event listners - - - - -
 
 function mouseEnter(event) {
+  // flip featured on mouse enter on season
   enter = event.target.dataset.mouseevent;
   flip(enter);
 }
 
 function mouseExit(event) {
+  // flip featured back on mouse enter on season
   exit = event.target.dataset.mouseevent;
   removeExpandedImages(exit);
   stopBack(exit);
 }
 
-// - - - - - - - click on image - - - - - - -
+// - - - - - expand seasons - - - - -
 
-function imageClicked(fixedname, season, time) {
-  console.log("imageClicked");
-
-  setTimeout(infobox(fixedname), 500);
-
-  // open season
-  season = season.substring(1);
-  console.log(season);
-  setExpanded(season);
+function setExpanded(click) {
+  // expand clicked
+  document.querySelector("#" + click).classList.add("zoomview");
+  document.querySelector("#" + click).classList.remove("overview");
+  document.querySelector("#" + click).classList.remove("compressed");
+  closeOthers(click);
+  setSeasonName(click);
+  setExpandedImages(click);
+  showClose(click);
 }
 
-function infobox(fixedname) {
-  // get posotion of clicked image after animation
-  const clickedPosition = document
-    .querySelector("#" + fixedname + " .featured")
-    .getBoundingClientRect();
-  console.log(clickedPosition);
+function closeOthers(click) {
+  // close all others but the clicked one
+  const closeDivs = document.querySelectorAll("div:not(#" + click + ").season");
+  closeDivs.forEach(el => {
+    el.classList.remove("zoomview");
+    el.classList.remove("overview");
+    el.classList.add("compressed");
+  });
+}
 
-  if (fixedname === "eddard_stark") {
-    document.querySelector("#infobox_eddard").classList.remove("hidden");
-  }
+function setSeasonName(click) {
+  // change full name to number for compressed seasons
+  const setSeasonNr = document.querySelectorAll(".compressed .season_nr");
+  setSeasonNr.forEach(el => {
+    el.textContent = el.textContent.slice(-1);
+  });
+  // set season to full text for expanded season
+  setTimeout(function() {
+    document.querySelector("#" + click + " .season_nr").textContent =
+      "Season " + click.slice(-1);
+  }, 200);
+}
 
-  if (fixedname === "viserys_targaryen") {
-    document.querySelector("#infobox_targaryen").classList.remove("hidden");
-  }
+function setExpandedImages(click) {
+  // set animation still/position
+  const expandedImages = document.querySelectorAll("#" + click + " .featured");
+  expandedImages.forEach(el => {
+    el.classList.add("flipped_expanded");
+  });
+}
 
-  // calculate centerpoint
-  const x_pos = clickedPosition.x;
-  const y_pos = clickedPosition.y;
-  console.log(x_pos);
-  console.log(y_pos);
+function showClose(click) {
+  // show close-button
+  console.log("showClose");
+  document.querySelector("#" + click + " .close").classList.remove("hidden");
+}
+
+// - - - - - close seasons - - - - -
+
+function removeExpanded() {
+  // close season
+  const closeAllSeasons = document.querySelectorAll(".season");
+  closeAllSeasons.forEach(el => {
+    el.classList.remove("zoomview");
+    el.classList.remove("compressed");
+    el.classList.add("overview");
+  });
+  hideClose();
+  resetSeasonName();
+}
+
+function resetSeasonName() {
+  // set season to full text for all seasons
+  const resetSeasonName = document.querySelectorAll(".season_nr");
+  setTimeout(function() {
+    resetSeasonName.forEach(el => {
+      el.textContent = "Season " + el.textContent.slice(-1);
+    });
+  }, 200);
+}
+
+function removeExpandedImages(click) {
+  // remove animation still/position
+  const expandedImages = document.querySelectorAll("#" + click + " .featured");
+  expandedImages.forEach(el => {
+    el.classList.remove("flipped_expanded");
+  });
+}
+
+function hideClose(click) {
+  // hide close-button
+  console.log("hideClose");
+  const closeButtons = document.querySelectorAll(".close");
+  closeButtons.forEach(el => {
+    el.classList.add("hidden");
+  });
 }
 
 // - - - - - - - flip enter animation - - - - - - -
@@ -322,103 +394,42 @@ function flipBack(exit) {
   });
 }
 
-// - - - - - mouseclick event listners - - - - -
+// - - - - - - - click on featued image - - - - - - -
 
-function mouseClick(event) {
-  click = event.target.dataset.mouseevent;
-  if (click != undefined && click.startsWith("season")) {
-    setExpanded(click);
+function imageClicked(fixedname, season, time) {
+  console.log("imageClicked");
+
+  setTimeout(infobox(fixedname), 500);
+
+  // open season
+  season = season.substring(1);
+  console.log(season);
+  setExpanded(season);
+}
+
+function infobox(fixedname) {
+  // get posotion of clicked image after animation
+  const clickedPosition = document
+    .querySelector("#" + fixedname + " .featured")
+    .getBoundingClientRect();
+  console.log(clickedPosition);
+
+  if (fixedname === "eddard_stark") {
+    document.querySelector("#infobox_eddard").classList.remove("hidden");
   }
 
-  if (click === "close") {
-    removeExpanded();
+  if (fixedname === "viserys_targaryen") {
+    document.querySelector("#infobox_targaryen").classList.remove("hidden");
   }
+
+  // calculate centerpoint
+  const x_pos = clickedPosition.x;
+  const y_pos = clickedPosition.y;
+  console.log(x_pos);
+  console.log(y_pos);
 }
 
-function setExpanded(click) {
-  // expand clicked
-  document.querySelector("#" + click).classList.add("zoomview");
-  document.querySelector("#" + click).classList.remove("overview");
-  document.querySelector("#" + click).classList.remove("compressed");
-  closeOthers(click);
-  setSeasonName(click);
-  setExpandedImages(click);
-  showClose(click);
-}
-
-function removeExpanded() {
-  const closeAllSeasons = document.querySelectorAll(".season");
-  closeAllSeasons.forEach(el => {
-    el.classList.remove("zoomview");
-    el.classList.remove("compressed");
-    el.classList.add("overview");
-  });
-  hideClose();
-  resetSeasonName();
-}
-
-function closeOthers(click) {
-  // close all others but the clicked one
-  const closeDivs = document.querySelectorAll("div:not(#" + click + ").season");
-  closeDivs.forEach(el => {
-    el.classList.remove("zoomview");
-    el.classList.remove("overview");
-    el.classList.add("compressed");
-  });
-}
-
-function setSeasonName(click) {
-  // change full name to number for compressed seasons
-  const setSeasonNr = document.querySelectorAll(".compressed .season_nr");
-  setSeasonNr.forEach(el => {
-    el.textContent = el.textContent.slice(-1);
-  });
-
-  // set season to full text for expanded season
-  setTimeout(function() {
-    document.querySelector("#" + click + " .season_nr").textContent =
-      "Season " + click.slice(-1);
-  }, 200);
-}
-
-function resetSeasonName() {
-  // set season to full text for all seasons
-  const resetSeasonName = document.querySelectorAll(".season_nr");
-  setTimeout(function() {
-    resetSeasonName.forEach(el => {
-      el.textContent = "Season " + el.textContent.slice(-1);
-    });
-  }, 200);
-}
-
-function setExpandedImages(click) {
-  const expandedImages = document.querySelectorAll("#" + click + " .featured");
-  expandedImages.forEach(el => {
-    el.classList.add("flipped_expanded");
-  });
-}
-
-function removeExpandedImages(click) {
-  const expandedImages = document.querySelectorAll("#" + click + " .featured");
-  expandedImages.forEach(el => {
-    el.classList.remove("flipped_expanded");
-  });
-}
-
-function showClose(click) {
-  console.log("showClose");
-  document.querySelector("#" + click + " .close").classList.remove("hidden");
-}
-
-function hideClose(click) {
-  console.log("hideClose");
-  const closeButtons = document.querySelectorAll(".close");
-  closeButtons.forEach(el => {
-    el.classList.add("hidden");
-  });
-}
-
-//  - - - - - - - - - slider overview state - - - - - - - - -
+//  - - - - - - - - - slider - - - - - - - - -
 
 function timelineSlider() {
   console.log("timelineSlider");
@@ -435,13 +446,11 @@ function timelineSlider() {
 
   // set death counter i DOM
   document.querySelector("#deathcounter").textContent = deathCount;
-
   let sliderSeason = data["deaths"][step]["season"];
   setSliderColors(sliderSeason);
 }
 
 function setSliderColors(sliderSeason) {
-  console.log("setSliderColors");
   // set death counter i DOM + color fadeout for seasons
   document.querySelector(sliderSeason).classList.add("hovercolor");
   setTimeout(function() {
