@@ -440,6 +440,13 @@ function modal(fixedname, season) {
   });
 
   // get content from json
+  const featuredData = data.featured;
+  console.log(featuredData);
+
+  let theFeatured = featuredData.filter(function(feature) {
+    return feature.image === "img_" + fixedname + ".jpg";
+  });
+  console.log(theFeatured);
 }
 
 //  - - - - - - - - - slider - - - - - - - - -
