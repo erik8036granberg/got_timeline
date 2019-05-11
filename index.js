@@ -327,21 +327,11 @@ function flipBack(exit) {
 function mouseClick(event) {
   click = event.target.dataset.mouseevent;
   if (click != undefined && click.startsWith("season")) {
-    event.preventDefault();
     setExpanded(click);
   }
 
   if (click === "close") {
-    const closeAllSeasons = document.querySelectorAll(".season");
-    closeAllSeasons.forEach(el => {
-      el.classList.remove("zoomview");
-      el.classList.remove("compressed");
-      el.classList.add("overview");
-    });
-    const closeButtons = document.querySelectorAll(".close");
-    closeButtons.forEach(el => {
-      el.classList.add("hidden");
-    });
+    removeExpanded();
   }
 }
 
@@ -354,6 +344,17 @@ function setExpanded(click) {
   setSeasonName(click);
   setExpandedImages(click);
   showClose(click);
+}
+
+function removeExpanded() {
+  const closeAllSeasons = document.querySelectorAll(".season");
+  closeAllSeasons.forEach(el => {
+    el.classList.remove("zoomview");
+    el.classList.remove("compressed");
+    el.classList.add("overview");
+  });
+  hideClose();
+  resetSeasonName();
 }
 
 function closeOthers(click) {
@@ -380,6 +381,16 @@ function setSeasonName(click) {
   }, 200);
 }
 
+function resetSeasonName() {
+  // set season to full text for all seasons
+  const resetSeasonName = document.querySelectorAll(".season_nr");
+  setTimeout(function() {
+    resetSeasonName.forEach(el => {
+      el.textContent = "Season " + el.textContent.slice(-1);
+    });
+  }, 200);
+}
+
 function setExpandedImages(click) {
   const expandedImages = document.querySelectorAll("#" + click + " .featured");
   expandedImages.forEach(el => {
@@ -400,8 +411,11 @@ function showClose(click) {
 }
 
 function hideClose(click) {
-  console.log("showClose");
-  document.querySelector("#" + click + " .close").classList.remove("hidden");
+  console.log("hideClose");
+  const closeButtons = document.querySelectorAll(".close");
+  closeButtons.forEach(el => {
+    el.classList.add("hidden");
+  });
 }
 
 //  - - - - - - - - - slider overview state - - - - - - - - -
