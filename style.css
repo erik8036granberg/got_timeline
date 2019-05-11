@@ -605,6 +605,9 @@ header img {
   height: 100%;
   pointer-events: all;
   transition: 2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #modal.hidden {
@@ -616,11 +619,11 @@ header img {
   position: absolute;
   background-color: hotpink;
   z-index: 600;
-  transform: scaleX(-1);
   border: 2px;
   pointer-events: all;
   min-width: 112px;
   min-height: 112px;
+  align-self: center;
 }
 
 #modal img {
@@ -628,10 +631,17 @@ header img {
   border: 2px solid #fff;
   min-width: 112px;
   min-height: 112px;
+  transform: scaleX(-1);
 }
 
 .fadeout {
   opacity: 0;
   transition: 1s;
   pointer-events: none;
+}
+
+.viewbox_scale {
+  min-width: 80vw;
+  min-height: 80vh;
+  transition: 2s;
 }

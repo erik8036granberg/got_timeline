@@ -434,11 +434,15 @@ function modal(fixedname, season) {
   const target_size = clickedPosition.width;
 
   // set position and size of modal
-  const modal = document.querySelector("#modal_box, #modal_box img");
-  modal.style.left = target_x_pos + "px";
-  modal.style.top = target_y_pos + "px";
-  modal.style.height = target_size + "px";
-  modal.style.width = target_size + "px";
+  const modal_box = document.querySelector("#modal_box");
+  const modal_img = document.querySelector("#modal_box img");
+  modal_box.style.left = target_x_pos + "px";
+  modal_box.style.top = target_y_pos + "px";
+  modal_box.style.height = target_size + "px";
+  modal_box.style.width = target_size + "px";
+
+  modal_img.style.height = target_size + "px";
+  modal_img.style.width = target_size + "px";
 
   // set image
   document.querySelector("#modal img").src = "img/img_" + fixedname + ".jpg";
@@ -447,16 +451,9 @@ function modal(fixedname, season) {
   document.querySelector("#modal").classList.remove("hidden");
 
   // scale modal to view size animation
+  modal_box.classList.add("viewbox_scale");
 
   // get content from json
-
-  // if (fixedname === "eddard_stark") {
-  //   document.querySelector("#infobox_eddard").classList.remove("hidden");
-  // }
-
-  // if (fixedname === "viserys_targaryen") {
-  //   document.querySelector("#infobox_targaryen").classList.remove("hidden");
-  // }
 }
 
 //  - - - - - - - - - slider - - - - - - - - -
