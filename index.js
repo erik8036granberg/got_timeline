@@ -4,6 +4,7 @@ let click;
 let enter;
 let exit;
 let data;
+let seasonFixed;
 
 window.addEventListener("DOMContentLoaded", init);
 
@@ -133,7 +134,7 @@ function cloneFeatured(featuredDeaths) {
 
   // add eventlistners
   clone.addEventListener("click", () => {
-    imageClicked(fixedname, season, time);
+    imageClicked(fixedname, season);
   });
 
   // append it destination season div
@@ -410,7 +411,7 @@ function flipBack(exit) {
 
 // - - - - - - - click on featued image - - - - - - -
 
-function imageClicked(fixedname, season, time) {
+function imageClicked(fixedname, season) {
   console.log("imageClicked");
 
   // open season if not open
@@ -420,11 +421,11 @@ function imageClicked(fixedname, season, time) {
 
   // timeout for correct position in case of animation
   setTimeout(function() {
-    modal(fixedname, season);
+    modal(fixedname);
   }, 500);
 }
 
-function modal(fixedname, season) {
+function modal(fixedname) {
   // get content from json
   const featuredData = data.featured;
   console.log(featuredData);
@@ -444,13 +445,17 @@ function modal(fixedname, season) {
   // scale modal to view size animation
   document.querySelector("#modal_box").classList.add("scale");
 
-  document.querySelector("#modal_box h2").classList.add(`${season}`);
+  seasonFixed = dataObj[0]["season"].substr(1);
+  console.log("seasonFixed");
+  console.log(seasonFixed);
+
+  document.querySelector("#modal_box h2").classList.add(`${seasonFixed}`);
   const colorH3 = document.querySelectorAll("#modal_box h3");
   colorH3.forEach(el => {
-    el.classList.add(`${season}`);
+    el.classList.add(`${seasonFixed}`);
   });
 
-  // // get content from json
+  // get content from json
   document.querySelector("#modal_box #episode").textContent =
     "Episode: " + dataObj[0]["episode"];
   document.querySelector("#modal_box #name").textContent = dataObj[0]["name"];
@@ -468,6 +473,12 @@ function closeModal() {
 
   // scale modal to view size animation
   document.querySelector("#modal_box").classList.remove("scale");
+
+  document.querySelector("#modal_box h2").classList.remove(`${seasonFixed}`);
+  const colorH3 = document.querySelectorAll("#modal_box h3");
+  colorH3.forEach(el => {
+    el.classList.remove(`${seasonFixed}`);
+  });
 }
 
 //  - - - - - - - - - slider - - - - - - - - -

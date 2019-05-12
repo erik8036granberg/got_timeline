@@ -275,9 +275,8 @@ header img {
   z-index: 500;
 }
 
-#seasons .compressed .featured_svg {
-  opacity: 0;
-  transition: 0.5s;
+#seasons .overview .featured_svg {
+  pointer-events: all;
 }
 
 #seasons .compressed .close {
@@ -288,6 +287,18 @@ header img {
 
 #seasons .featured_svg .featured {
   pointer-events: all;
+}
+
+#seasons .compressed .featured_svg {
+  opacity: 0;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+#seasons .compressed .featured_svg .featured {
+  opacity: 0;
+  transition: 0.5s;
+  pointer-events: none;
 }
 
 /* - - - - - - - svg styles - - - - - - -  */
