@@ -8,7 +8,10 @@
       "time": 51,
       "symbol": "symbol_crown.svg",
       "image": "img_viserys_targaryen.jpg",
-      "position": "4"
+      "position": "4",
+      "assailant": "Khal Drogo",
+      "method": "Burned to death",
+      "description": "Daenerys's cocky brother was so desperate to take the iron throne that he totally disrespected his sister in front of Khal Drogo, which got him nothing but with a crown of melted gold cooking his skull."
     },
     {
       "name": "Eddard Stark",
@@ -18,7 +21,10 @@
       "time": 55,
       "symbol": "symbol_sword.svg",
       "image": "img_eddard_stark.jpg",
-      "position": "1"
+      "position": "1",
+      "assailant": "Ilyn Payne",
+      "method": "Executed by sword",
+      "description": "Ned was a man of honor, and maybe that was his downfall. His diligence to get to the bottom of the true origin of Cersei's children resulted in his execution under Joffrey's command—although it's pretty clear Cersei had some influence in the decision."
     },
     {
       "name": "Renly Baratheon",
@@ -28,7 +34,10 @@
       "time": 4,
       "symbol": "symbol_ghost.svg",
       "image": "img_renly_baratheon.jpg",
-      "position": "5"
+      "position": "5",
+      "assailant": "Shadow creature",
+      "method": "Stabbed in the back",
+      "description": "The would-be king was negotiating a deal of peace with Catelyn, on behalf of Robb, when a puff of black smoke in the shape of the man entered his tent and stabbed him in the chest. His knight, Brienne of Tarth, is initially blamed for killing him but a sorceress was behind the death."
     },
     {
       "name": "Catelyn Stark",
@@ -38,7 +47,10 @@
       "time": 49,
       "symbol": "symbol_wedding.svg",
       "image": "img_catelyn_stark.jpg",
-      "position": "1"
+      "position": "1",
+      "assailant": "Walder Rivers",
+      "method": "Throat slit",
+      "description": "The Stark family matriarch at least managed to kill Walder's unsuspecting bride before a guard killed her too."
     },
     {
       "name": "Robb Stark",
@@ -48,7 +60,10 @@
       "time": 49,
       "symbol": "symbol_wedding.svg",
       "image": "img_robb_stark.jpg",
-      "position": "3"
+      "position": "3",
+      "assailant": "Roose Bolton",
+      "method": "Stabbed through the heart",
+      "description": "You can't help who you love, but that doesn't mean it won't cost you. It certainly did for Robb, who not only witnessed his own bride get stabbed to death—and subsequently the child she was carrying—but he was also stabbed and killed too."
     },
     {
       "name": "Talisa Stark",
@@ -58,7 +73,10 @@
       "time": 44,
       "symbol": "symbol_wedding.svg",
       "image": "img_talisa_stark.jpg",
-      "position": "5"
+      "position": "5",
+      "assailant": "Lorthar Frey",
+      "method": "Stabbed repeatedly in the stomach",
+      "description": "Robb broke his promise to marry Walder Frey's daughter by wedding Talisa instead, resulting in perhaps the more horrific murder scene in GOT history. While celebrating Robb's uncle's marriage to Walder's daughter, Talisa was stabbed in her pregnant belly multiple times by opposing soldiers."
     },
     {
       "name": "Tywin Lannister",
@@ -68,7 +86,10 @@
       "time": 58,
       "symbol": "symbol_toilet.svg",
       "image": "img_tywin_lannister.jpg",
-      "position": "1"
+      "position": "1",
+      "assailant": "Tyrion Lannister",
+      "method": "Shot in the stomach and heart",
+      "description": " He was never good to his youngest son Tyrion, but framing him for Joffrey's murder, then taking the woman Tyrion loved to bed led this old man to be shot in the chest with a crossbow while he was helplessly taking a dump."
     },
     {
       "name": "Oberyn Martell",
@@ -78,7 +99,10 @@
       "time": 50,
       "symbol": "symbol_eyes.svg",
       "image": "img_oberyn_martell.jpg",
-      "position": "4"
+      "position": "4",
+      "assailant": "The Mountain",
+      "method": "Skull crushed though the eyes",
+      "description": "The Red Viper almost killed The Mountain, but he was a little arrogant and that sealed his fate. Just when he thought he was safe from the fight, Ser Gregor Clegane mustered up his remaining super strength to crush Oberyn's skull with his bare hands. Brutal."
     },
     {
       "name": "Joffrey Baratheon",
@@ -88,7 +112,10 @@
       "time": 48,
       "symbol": "symbol_poison.svg",
       "image": "img_joffrey_baratheon.jpg",
-      "position": "2"
+      "position": "2",
+      "assailant": "Olenna Tyrell",
+      "method": "Poisoned with 'The strangler'",
+      "description": "Lorem ipsum dolor sit amet"
     },
     {
       "name": "Jon Snow",
@@ -98,7 +125,10 @@
       "time": 56,
       "symbol": "symbol_dagger.svg",
       "image": "img_jon_snow.jpg",
-      "position": "1"
+      "position": "1",
+      "assailant": "Black brothers",
+      "method": "Stabbed to death by his own men",
+      "description": "Jon quickly follows Thorne to a gathering of his Watch brothers, only to find a sign marked 'Traitor'. Thorne, Yarwyck, Marsh and two other black brothers proceed to stab Jon while uttering, 'For the Watch.' As the wounded Jon kneels, gasping for breath, Olly tearfully comes forward and after a few moments of pause, stabs Jon in the heart and declares, 'For the Watch.'"
     },
     {
       "name": "Shrine Baratheon",
@@ -108,7 +138,10 @@
       "time": 32,
       "symbol": "symbol_fire.svg",
       "image": "img_shrine_baratheon.jpg",
-      "position": "5"
+      "position": "5",
+      "assailant": "Melisandre",
+      "method": "Burned alive as a sacrifice",
+      "description": "Despite being locked in a tower most of her life due to her mother's hatred and greyscale disease, sweet Shireen was burned at the stake at Melisandre's request. The Red Woman believed the young teen would make a nice sacrifice for good luck in battle, and Shireen's father Stannis obliged."
     },
     {
       "name": "Alliser Thorne",
@@ -118,7 +151,10 @@
       "time": 49,
       "symbol": "symbol_hanged.svg",
       "image": "img_alliser_thorne.jpg",
-      "position": "4"
+      "position": "4",
+      "assailant": "Jon Snow",
+      "method": "Executed by hanging",
+      "description": "The Master-at-Arms of the Night's Watch was never a fan of Jon Snow, so it wasn't all that surprising when he plotted to have Jon killed just as he was named the new Lord Commander of the Night's Watch. It's Jon who ends up having the last laugh though when he comes back from the dead and has Alliser hanged for treason."
     },
     {
       "name": "Ramsey Bolton",
@@ -128,7 +164,10 @@
       "time": 51,
       "symbol": "symbol_dogs.svg",
       "image": "img_ramsey_bolton.jpg",
-      "position": "1"
+      "position": "1",
+      "assailant": "His own dogs",
+      "method": "Eaten alive",
+      "description": "A classic tale of what goes around, comes back around. The rather murderous Lord Bolton had a cruel penchant for feeding humans to his starving hounds. He probably never thought a day would come when he'd be the one they would devour, and on Sansa's orders at that."
     },
     {
       "name": "Tommen Baratheon",
@@ -138,7 +177,10 @@
       "time": 23,
       "symbol": "symbol_jump.svg",
       "image": "img_tommen_baratheon.jpg",
-      "position": "5"
+      "position": "5",
+      "assailant": "Suicide",
+      "method": "Juming out a window",
+      "description": "The little king likely would have made a better one than his brother Joffrey, but he simply could not bear to live after watching the great destruction of the Great Sept. So he jumped out the window to his death."
     }
   ],
   "deaths": [

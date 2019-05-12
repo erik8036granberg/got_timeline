@@ -449,10 +449,16 @@ function modal(fixedname, season) {
     el.classList.add(`${season}`);
   });
 
+  // // get content from json
   document.querySelector("#modal_box #episode").textContent =
     "Episode: " + dataObj[0]["episode"];
-
   document.querySelector("#modal_box #name").textContent = dataObj[0]["name"];
+  document.querySelector("#modal_box #assailant").textContent =
+    dataObj[0]["assailant"];
+  document.querySelector("#modal_box #method").textContent =
+    dataObj[0]["method"];
+  document.querySelector("#modal_box #description").textContent =
+    dataObj[0]["description"];
 }
 
 // // get content from json
