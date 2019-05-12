@@ -641,7 +641,7 @@ header img {
   line-height: 1.5rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 2rem;
+  grid-gap: 1rem;
 }
 
 #modal_box h4 {
@@ -678,7 +678,7 @@ header img {
   grid-column: 2 / span 2;
 }
 
-#modal img {
+#modal #round {
   border-radius: 50%;
   border: 2px solid #fff;
   max-width: 130px;
@@ -700,7 +700,7 @@ header img {
   border: 2px solid #fff;
 }
 
-#modal_box.scale img {
+#modal_box.scale #round {
   position: absolute;
   left: -56px;
   top: -56px;
@@ -708,4 +708,17 @@ header img {
   transform-origin: center;
   transform-box: fill-box;
   transition: 0.5s;
+}
+
+#modal_box #close_modal {
+  position: absolute;
+  right: 1vw;
+  top: 1vw;
+  width: 3.5vw;
+  height: 3.5vw;
+  z-index: 999;
+}
+
+#modal_box #close_modal:hover {
+  transform: scale(1.2);
 }

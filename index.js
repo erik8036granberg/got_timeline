@@ -11,6 +11,7 @@ function init() {
   console.log("init");
   document.querySelector("body").addEventListener("click", mouseClick);
   document.querySelector("#slider").addEventListener("input", timelineSlider);
+  document.querySelector("#modal_box").addEventListener("click", closeModal);
 
   // mouseover eventlistners
   const seasonIn = document.querySelectorAll(".season");
@@ -435,7 +436,7 @@ function modal(fixedname, season) {
   console.log(dataObj);
 
   // set image
-  document.querySelector("#modal img").src = "img/img_" + fixedname + ".jpg";
+  document.querySelector("#modal #round").src = "img/img_" + fixedname + ".jpg";
 
   // show modal
   document.querySelector("#modal").classList.remove("hidden");
@@ -461,30 +462,13 @@ function modal(fixedname, season) {
     dataObj[0]["description"];
 }
 
-// // get content from json
-// const featuredData = data.featured;
-// console.log(featuredData);
+function closeModal() {
+  // show modal
+  document.querySelector("#modal").classList.add("hidden");
 
-// // filter data to choshen object
-// let featuredObj = featuredData.filter(function(feature) {
-//   return feature.image === "img_" + fixedname + ".jpg";
-// });
-// console.log(featuredObj);
-
-// // show modal
-// document.querySelector("#modal").classList.remove("hidden");
-
-// // scale modal to view size animation
-// document.querySelector("#modal_box").classList.add("scale");
-
-// document.querySelector("#modal_box h2").classList.add(`${season}`);
-// const colorH3 = document.querySelectorAll("#modal_box h3");
-// colorH3.forEach(el => {
-//   el.classList.add(`${season}`);
-// });
-
-// // set image
-// document.querySelector("#modal img").src = "img/img_" + featuredObj["image"];
+  // scale modal to view size animation
+  document.querySelector("#modal_box").classList.remove("scale");
+}
 
 //  - - - - - - - - - slider - - - - - - - - -
 
