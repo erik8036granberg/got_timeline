@@ -607,6 +607,12 @@ header img {
   line-height: 3rem;
 }
 
+#deathlabel {
+  color: #fff;
+  font-size: 0.75rem;
+  line-height: auto;
+}
+
 #modal {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.25);
@@ -721,4 +727,5 @@ header img {
 
 #modal_box #close_modal:hover {
   transform: scale(1.2);
+  transition: 0.5s;
 }

@@ -486,7 +486,7 @@ function timelineSlider() {
   }
 
   // set death counter i DOM
-  document.querySelector("#deathcounter").textContent = deathCount;
+  document.querySelector("#deathfigure").textContent = deathCount;
   let sliderSeason = data["deaths"][step]["season"];
   setSliderColors(sliderSeason);
 }
