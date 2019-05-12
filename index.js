@@ -424,6 +424,16 @@ function imageClicked(fixedname, season, time) {
 }
 
 function modal(fixedname, season) {
+  // get content from json
+  const featuredData = data.featured;
+  console.log(featuredData);
+
+  const dataObj = featuredData.filter(function(feature) {
+    return feature.image === "img_" + fixedname + ".jpg";
+  });
+  console.log("dataObj er: ");
+  console.log(dataObj);
+
   // set image
   document.querySelector("#modal img").src = "img/img_" + fixedname + ".jpg";
 
@@ -439,15 +449,36 @@ function modal(fixedname, season) {
     el.classList.add(`${season}`);
   });
 
-  // get content from json
-  const featuredData = data.featured;
-  console.log(featuredData);
+  document.querySelector("#modal_box #episode").textContent =
+    "Episode: " + dataObj[0]["episode"];
 
-  let theFeatured = featuredData.filter(function(feature) {
-    return feature.image === "img_" + fixedname + ".jpg";
-  });
-  console.log(theFeatured);
+  document.querySelector("#modal_box #name").textContent = dataObj[0]["name"];
 }
+
+// // get content from json
+// const featuredData = data.featured;
+// console.log(featuredData);
+
+// // filter data to choshen object
+// let featuredObj = featuredData.filter(function(feature) {
+//   return feature.image === "img_" + fixedname + ".jpg";
+// });
+// console.log(featuredObj);
+
+// // show modal
+// document.querySelector("#modal").classList.remove("hidden");
+
+// // scale modal to view size animation
+// document.querySelector("#modal_box").classList.add("scale");
+
+// document.querySelector("#modal_box h2").classList.add(`${season}`);
+// const colorH3 = document.querySelectorAll("#modal_box h3");
+// colorH3.forEach(el => {
+//   el.classList.add(`${season}`);
+// });
+
+// // set image
+// document.querySelector("#modal img").src = "img/img_" + featuredObj["image"];
 
 //  - - - - - - - - - slider - - - - - - - - -
 
